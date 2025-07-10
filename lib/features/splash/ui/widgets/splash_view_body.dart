@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/utils/app_images.dart';
+import 'package:fruit_app/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
+import 'package:intl/intl.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -24,7 +26,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: Intl.getCurrentLocale() == 'ar'? MainAxisAlignment.end: MainAxisAlignment.start,
           children: [SvgPicture.asset(AppImages.plant)],
         ),
 
