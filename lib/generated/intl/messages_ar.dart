@@ -33,17 +33,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "hub": MessageLookupByLibrary.simpleMessage("HUB"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
-    "or": MessageLookupByLibrary.simpleMessage("أو"),
-    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
-    "registerWithApple": MessageLookupByLibrary.simpleMessage(
-      "تسجيل بواسطة ابل",
-    ),
-    "registerWithFacebook": MessageLookupByLibrary.simpleMessage(
+    "loginWithApple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة ابل"),
+    "loginWithFacebook": MessageLookupByLibrary.simpleMessage(
       "تسجيل بواسطة فيسبوك",
     ),
-    "registerWithGoogle": MessageLookupByLibrary.simpleMessage(
+    "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "تسجيل بواسطة جوجل",
     ),
+    "or": MessageLookupByLibrary.simpleMessage("أو"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الان"),

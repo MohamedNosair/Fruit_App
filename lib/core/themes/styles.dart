@@ -35,6 +35,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     color:AppColors.gray600,
   );
+  static TextStyle font16SemiBoldGray950 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color:AppColors.gray950,
+  );
   static TextStyle font16SemiBoldGreen500 = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.semiBold,

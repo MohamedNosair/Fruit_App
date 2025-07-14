@@ -12,9 +12,9 @@
     "dontHaveAnAccount":"لا تمتلك حساب ؟",
     "createAccount":" قم بانشاء حساب",
     "or":"أو",
-    "registerWithGoogle":"تسجيل بواسطة جوجل",
-    "registerWithFacebook":"تسجيل بواسطة فيسبوك",
-    "registerWithApple":"تسجيل بواسطة ابل",
+    "loginWithGoogle":"تسجيل بواسطة جوجل",
+    "loginWithFacebook":"تسجيل بواسطة فيسبوك",
+    "loginWithApple":"تسجيل بواسطة ابل",
     "subTitlePageViewOne": "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
     "subTitlePageViewTwo": "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية"
 

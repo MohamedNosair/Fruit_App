@@ -8,4 +8,7 @@ class AppImages {
   static String backgroundPageViewTwo = '${assets}background_page_view_two.svg';
   static String imagePageViewOne = '${assets}image_page_view_one.svg';
   static String imagePageViewTwo = '${assets}image_page_view_two.svg';
+  static String facebook = '${assets}facebook_icon.svg';
+  static String apple = '${assets}apple_icon.svg';
+  static String google = '${assets}google_icon.svg';
 }

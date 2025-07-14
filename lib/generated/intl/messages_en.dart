@@ -31,17 +31,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "hub": MessageLookupByLibrary.simpleMessage("HUB"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "loginWithApple": MessageLookupByLibrary.simpleMessage("login with Apple"),
+    "loginWithFacebook": MessageLookupByLibrary.simpleMessage(
+      "login with Facebook",
+    ),
+    "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
+      "login with Google",
+    ),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("password"),
-    "registerWithApple": MessageLookupByLibrary.simpleMessage(
-      "Register with Apple",
-    ),
-    "registerWithFacebook": MessageLookupByLibrary.simpleMessage(
-      "Register with Facebook",
-    ),
-    "registerWithGoogle": MessageLookupByLibrary.simpleMessage(
-      "Register with Google",
-    ),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("Search and shop"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),

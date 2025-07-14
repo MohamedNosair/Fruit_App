@@ -139,31 +139,31 @@ class S {
     return Intl.message('or', name: 'or', desc: '', args: []);
   }
 
-  /// `Register with Google`
-  String get registerWithGoogle {
+  /// `login with Google`
+  String get loginWithGoogle {
     return Intl.message(
-      'Register with Google',
-      name: 'registerWithGoogle',
+      'login with Google',
+      name: 'loginWithGoogle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Register with Facebook`
-  String get registerWithFacebook {
+  /// `login with Facebook`
+  String get loginWithFacebook {
     return Intl.message(
-      'Register with Facebook',
-      name: 'registerWithFacebook',
+      'login with Facebook',
+      name: 'loginWithFacebook',
       desc: '',
       args: [],
     );
   }
 
-  /// `Register with Apple`
-  String get registerWithApple {
+  /// `login with Apple`
+  String get loginWithApple {
     return Intl.message(
-      'Register with Apple',
-      name: 'registerWithApple',
+      'login with Apple',
+      name: 'loginWithApple',
       desc: '',
       args: [],
     );
