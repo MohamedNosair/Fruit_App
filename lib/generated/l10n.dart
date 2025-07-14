@@ -89,6 +89,86 @@ class S {
     );
   }
 
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `password`
+  String get password {
+    return Intl.message('password', name: 'password', desc: '', args: []);
+  }
+
+  /// `forget password ?`
+  String get forgetPassword {
+    return Intl.message(
+      'forget password ?',
+      name: 'forgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account? `
+  String get dontHaveAnAccount {
+    return Intl.message(
+      'Don\'t have an account? ',
+      name: 'dontHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create account.`
+  String get createAccount {
+    return Intl.message(
+      'Create account.',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `or`
+  String get or {
+    return Intl.message('or', name: 'or', desc: '', args: []);
+  }
+
+  /// `Register with Google`
+  String get registerWithGoogle {
+    return Intl.message(
+      'Register with Google',
+      name: 'registerWithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register with Facebook`
+  String get registerWithFacebook {
+    return Intl.message(
+      'Register with Facebook',
+      name: 'registerWithFacebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register with Apple`
+  String get registerWithApple {
+    return Intl.message(
+      'Register with Apple',
+      name: 'registerWithApple',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.`
   String get subTitlePageViewOne {
     return Intl.message(

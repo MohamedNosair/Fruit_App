@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/themes/styles.dart';
+import 'package:fruit_app/core/utils/constant.dart';
+import 'package:fruit_app/core/utils/extension.dart';
+import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/generated/l10n.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:svg_flutter/svg.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -11,11 +16,12 @@ class PageViewItem extends StatelessWidget {
     required this.Image,
     required this.backGround,
     required this.title,
-    required this.subTitle, required this.visibility,
+    required this.subTitle,
+    required this.visibility,
   });
   final String Image, backGround, subTitle;
   final Widget title;
-  final bool visibility ;
+  final bool visibility;
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +48,14 @@ class PageViewItem extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(16.r),
                   child: TextButton(
-                    onPressed: () {},
-                    child: Text(tr.skip, style: TextStyles.font13regularGray400),
+                    onPressed: () {
+                      storage.write(kIsOnBoardingViewSeen, true);
+                      context.pushReplacementNamed(Routes.loginView);
+                    },
+                    child: Text(
+                      tr.skip,
+                      style: TextStyles.font13regularGray400,
+                    ),
                   ),
                 ),
               ),

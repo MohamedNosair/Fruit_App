@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/utils/app_images.dart';
-import 'package:fruit_app/generated/l10n.dart';
+import 'package:fruit_app/core/utils/constant.dart';
+import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:svg_flutter/svg.dart';
 import 'package:intl/intl.dart';
 
@@ -26,7 +27,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
-          mainAxisAlignment: Intl.getCurrentLocale() == 'ar'? MainAxisAlignment.end: MainAxisAlignment.start,
+          mainAxisAlignment: Intl.getCurrentLocale() == 'ar'
+              ? MainAxisAlignment.end
+              : MainAxisAlignment.start,
           children: [SvgPicture.asset(AppImages.plant)],
         ),
 
@@ -38,8 +41,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
 
   void excuteNavigation() {
+    bool  isOnBoardingViewSeen = storage.read(kIsOnBoardingViewSeen) ;
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushReplacementNamed(context, Routes.onBoardingView);
+      if (isOnBoardingViewSeen) {
+        Navigator.pushReplacementNamed(context, Routes.loginView);
+      } else {
+        Navigator.pushReplacementNamed(context, Routes.onBoardingView);
+      }
     });
   }
 }

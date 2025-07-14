@@ -9,10 +9,9 @@ class OnBoardingPageView extends StatelessWidget {
   const OnBoardingPageView({
     super.key,
     required this.pageController,
-    required this.visibility,
+    
   });
   final PageController pageController;
-  final bool visibility;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class OnBoardingPageView extends StatelessWidget {
             ],
           ),
           subTitle: tr.subTitlePageViewOne,
-          visibility: visibility,
+          visibility: true,
         ),
 
         PageViewItem(
@@ -47,7 +46,7 @@ class OnBoardingPageView extends StatelessWidget {
           backGround: AppImages.backgroundPageViewTwo,
           title: Text(tr.searchAndShop, style: TextStyles.font23BoldGray950),
           subTitle: tr.subTitlePageViewTwo,
-          visibility: visibility,
+          visibility: false,
         ),
       ],
     );

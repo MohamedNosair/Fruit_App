@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/themes/app_color.dart';
+import 'package:fruit_app/core/themes/styles.dart';
 
 class CustomButtom extends StatelessWidget {
   const CustomButtom({super.key, required this.text, required this.onPressed});
@@ -20,7 +21,7 @@ class CustomButtom extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: Text(text),
+        child: Text(text, style: TextStyles.font16BoldWhite),
       ),
     );
   }

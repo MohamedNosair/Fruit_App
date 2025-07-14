@@ -6,6 +6,17 @@
     "skip":"Skip",
     "startNow":"Start Now!",
     "searchAndShop":"Search and shop",
+    "login":"Login",
+    "email":"Email",
+    "password":"password",
+    "forgetPassword":"forget password ?",
+    "dontHaveAnAccount":"Don't have an account? ",
+    "createAccount":"Create account.",
+    "or":"or",
+    "registerWithGoogle":"Register with Google",
+    "registerWithFacebook":"Register with Facebook",
+    "registerWithApple":"Register with Apple",
+
     "subTitlePageViewOne": "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.",
     "subTitlePageViewTwo": "We offer you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you're choosing the perfect fruit."
 
