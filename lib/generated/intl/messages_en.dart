@@ -22,7 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "OurTermsAndConditions": MessageLookupByLibrary.simpleMessage(
+      "our Terms and Conditions.",
+    ),
+    "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account",
+    ),
+    "byCreatingAnAccountYouAgreeTo": MessageLookupByLibrary.simpleMessage(
+      "By creating an account, you agree to",
+    ),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account."),
+    "createNewAccount": MessageLookupByLibrary.simpleMessage("Create account"),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
@@ -38,9 +48,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "login with Google",
     ),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("password"),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("Search and shop"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),
     "subTitlePageViewOne": MessageLookupByLibrary.simpleMessage(

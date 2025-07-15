@@ -10,11 +10,20 @@
     "password":"كلمة المرور",
     "forgetPassword":"نسيت كلمة المرور ؟",
     "dontHaveAnAccount":"لا تمتلك حساب ؟",
-    "createAccount":" قم بانشاء حساب",
+    "createAccount":"قم بانشاء حساب",
     "or":"أو",
     "loginWithGoogle":"تسجيل بواسطة جوجل",
     "loginWithFacebook":"تسجيل بواسطة فيسبوك",
     "loginWithApple":"تسجيل بواسطة ابل",
+
+    "signUp":"تسجيل جديد",
+    "name":"الاسم بالكامل",
+    "createNewAccount":"إنشاء حساب جديد",
+    "alreadyHaveAnAccount":"تمتلك حساب بالفعل؟",
+    "byCreatingAnAccountYouAgreeTo":"من خلال إنشاء حساب،فإنك توافق على",
+    "OurTermsAndConditions":"الشروط والأحكام الخاصة بنا",
+
+
     "subTitlePageViewOne": "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
     "subTitlePageViewTwo": "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية"
 

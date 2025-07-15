@@ -169,6 +169,56 @@ class S {
     );
   }
 
+  /// `Sign up`
+  String get signUp {
+    return Intl.message('Sign up', name: 'signUp', desc: '', args: []);
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Create account`
+  String get createNewAccount {
+    return Intl.message(
+      'Create account',
+      name: 'createNewAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account`
+  String get alreadyHaveAnAccount {
+    return Intl.message(
+      'Already have an account',
+      name: 'alreadyHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By creating an account, you agree to`
+  String get byCreatingAnAccountYouAgreeTo {
+    return Intl.message(
+      'By creating an account, you agree to',
+      name: 'byCreatingAnAccountYouAgreeTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `our Terms and Conditions.`
+  String get OurTermsAndConditions {
+    return Intl.message(
+      'our Terms and Conditions.',
+      name: 'OurTermsAndConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.`
   String get subTitlePageViewOne {
     return Intl.message(

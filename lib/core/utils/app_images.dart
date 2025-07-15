@@ -11,4 +11,5 @@ class AppImages {
   static String facebook = '${assets}facebook_icon.svg';
   static String apple = '${assets}apple_icon.svg';
   static String google = '${assets}google_icon.svg';
+  static String right = '${assets}right.svg';
 }

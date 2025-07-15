@@ -5,6 +5,7 @@ import 'package:fruit_app/fruit_hub_app.dart';
 
 void main() async {
  await storage.initGetStorge();
+
   runApp(const FruitHub());
 }
 

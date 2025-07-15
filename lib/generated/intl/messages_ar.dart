@@ -22,7 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "createAccount": MessageLookupByLibrary.simpleMessage(" قم بانشاء حساب"),
+    "OurTermsAndConditions": MessageLookupByLibrary.simpleMessage(
+      "الشروط والأحكام الخاصة بنا",
+    ),
+    "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "تمتلك حساب بالفعل؟",
+    ),
+    "byCreatingAnAccountYouAgreeTo": MessageLookupByLibrary.simpleMessage(
+      "من خلال إنشاء حساب،فإنك توافق على",
+    ),
+    "createAccount": MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
+    "createNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لا تمتلك حساب ؟",
     ),
@@ -40,9 +50,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "تسجيل بواسطة جوجل",
     ),
+    "name": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
     "or": MessageLookupByLibrary.simpleMessage("أو"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
+    "signUp": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الان"),
     "subTitlePageViewOne": MessageLookupByLibrary.simpleMessage(
