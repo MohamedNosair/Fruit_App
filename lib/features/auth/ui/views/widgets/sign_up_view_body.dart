@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/utils/constant.dart';
-import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/core/widgets/custom_buttom.dart';
-import 'package:fruit_app/core/widgets/or_custom_divider.dart';
 import 'package:fruit_app/core/widgets/custom_text_form_field.dart';
-import 'package:fruit_app/features/auth/login/ui/widgets/dont_and_have_account.dart';
-import 'package:fruit_app/features/auth/login/ui/widgets/forget_password.dart';
-import 'package:fruit_app/features/auth/login/ui/widgets/login_with_social_media.dart';
+import 'package:fruit_app/features/auth/ui/views/widgets/dont_and_have_account.dart';
+import 'package:fruit_app/features/auth/ui/views/widgets/terms_and_condations.dart';
 import 'package:fruit_app/generated/l10n.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SignUpViewBody extends StatelessWidget {
+  const SignUpViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +19,10 @@ class LoginViewBody extends StatelessWidget {
         child: Column(
           spacing: 16.h,
           children: [
+            CustomTextFormField(
+              hintText: S.current.name,
+              textInputType: TextInputType.name,
+            ),
             CustomTextFormField(
               hintText: S.current.email,
               textInputType: TextInputType.emailAddress,
@@ -35,21 +35,15 @@ class LoginViewBody extends StatelessWidget {
                 onPressed: () {},
               ),
             ),
-            const ForgetPassword(),
-
-            heightSpace(16),
-            CustomButtom(text: S.current.login, onPressed: () {}),
-            //// create account
+            TermsAndCondations(),
+            CustomButtom(text: S.current.createNewAccount, onPressed: () {}),
             DontAndHaveAccount(
               onTap: () {
-                Navigator.pushNamed(context, Routes.signUpView);
+                Navigator.pop(context);
               },
-              textPartOne: S.current.dontHaveAnAccount,
-              textPartTwo: S.current.createAccount,
+              textPartOne: S.current.alreadyHaveAnAccount,
+              textPartTwo: S.current.login,
             ),
-            heightSpace(17),
-            const OrCustomDivider(),
-            const LoginWithSocialMedia(),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/utils/app_images.dart';
-import 'package:fruit_app/features/auth/login/ui/widgets/social_login_button.dart';
+import 'package:fruit_app/features/auth/ui/views/widgets/social_login_button.dart';
 import 'package:fruit_app/generated/l10n.dart';
 
 class LoginWithSocialMedia extends StatelessWidget {
