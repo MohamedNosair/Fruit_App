@@ -12,7 +12,7 @@ class AuthRepoImpl extends AuthRepo {
   final FirbaseAuthService firbaseAuthService;
 
   AuthRepoImpl({required this.firbaseAuthService});
-
+//// Create user with email and password
   @override
   Future<Either<Faliure, UserEntities>> createEmialAndPassword(
     String emailAddress,
@@ -33,7 +33,7 @@ class AuthRepoImpl extends AuthRepo {
   }
 
 
-
+//// Sign in with email and password
   @override
   Future<Either<Faliure, UserEntities>> signinEmialAndPassword(
     String emailAddress,
@@ -51,7 +51,7 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFaluire(message: e.message));
     }
   }
-  
+  //// Sign in with Google
   @override
   Future<Either<Faliure, UserEntities>> signinWithGoogle()async {
         try {
