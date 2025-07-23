@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "OurTermsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام الخاصة بنا",
     ),
+    "SignupFailed": MessageLookupByLibrary.simpleMessage(
+      "فشل التسجيل. يرجى المحاولة مرة أخرى.",
+    ),
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "تمتلك حساب بالفعل؟",
     ),
@@ -37,11 +40,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا تمتلك حساب ؟",
     ),
     "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+    "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "يوجد حساب بالفعل بهذا البريد الإلكتروني.",
+    ),
     "forgetPassword": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور ؟",
     ),
     "fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "hub": MessageLookupByLibrary.simpleMessage("HUB"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "عنوان البريد الإلكتروني غير صالح.",
+    ),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginWithApple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة ابل"),
     "loginWithFacebook": MessageLookupByLibrary.simpleMessage(
@@ -51,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تسجيل بواسطة جوجل",
     ),
     "name": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
+    "networkRequestFailed": MessageLookupByLibrary.simpleMessage(
+      "فشل الاتصال بالشبكة. يرجى التحقق من اتصال الإنترنت.",
+    ),
     "or": MessageLookupByLibrary.simpleMessage("أو"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
@@ -63,6 +75,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "subTitlePageViewTwo": MessageLookupByLibrary.simpleMessage(
       "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
     ),
+    "tooManyRequests": MessageLookupByLibrary.simpleMessage(
+      "عدد كبير جدًا من المحاولات. يرجى المحاولة لاحقًا.",
+    ),
+    "unexpected": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ غير متوقع. حاول مرة أخرى لاحقًا.",
+    ),
+    "userDisabled": MessageLookupByLibrary.simpleMessage(
+      "تم تعطيل حساب المستخدم هذا.",
+    ),
+    "userNotFound": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد مستخدم مرتبط بهذا البريد الإلكتروني.",
+    ),
+    "weakPassword": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور المقدمة ضعيفة جدًا.",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بك في"),
+    "welcomeName": MessageLookupByLibrary.simpleMessage("مرحبًا بك "),
+    "wrongPassword": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور غير صحيحة.",
+    ),
   };
 }

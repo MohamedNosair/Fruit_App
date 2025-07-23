@@ -1,6 +1,7 @@
 {
 
     "welcome": "Welcome To",
+    "welcomeName": "Welcome ",
     "fruit":"Fruit",
     "hub":"HUB",
     "skip":"Skip",
@@ -23,7 +24,17 @@
     "alreadyHaveAnAccount":"Already have an account",
     "byCreatingAnAccountYouAgreeTo":"By creating an account, you agree to",
     "OurTermsAndConditions":"our Terms and Conditions.",
-
+    
+  "invalidEmail": "Invalid email address.",
+  "weakPassword": "The password provided is too weak.",
+  "emailAlreadyInUse": "The account already exists for that email.",
+  "userDisabled": "This user account has been disabled.",
+  "userNotFound": "No user found for that email.",
+  "wrongPassword": "Incorrect password.",
+  "networkRequestFailed": "Network error. Please check your internet connection.",
+  "tooManyRequests": "Too many attempts. Please try again later.",
+  "SignupFailed": "Sign up failed. Please try again.",
+  "unexpected": "Unexpected error. Try again later.",
 
     "subTitlePageViewOne": "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.",
     "subTitlePageViewTwo": "We offer you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you're choosing the perfect fruit."

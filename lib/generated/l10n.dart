@@ -59,6 +59,11 @@ class S {
     return Intl.message('Welcome To', name: 'welcome', desc: '', args: []);
   }
 
+  /// `Welcome `
+  String get welcomeName {
+    return Intl.message('Welcome ', name: 'welcomeName', desc: '', args: []);
+  }
+
   /// `Fruit`
   String get fruit {
     return Intl.message('Fruit', name: 'fruit', desc: '', args: []);
@@ -214,6 +219,106 @@ class S {
     return Intl.message(
       'our Terms and Conditions.',
       name: 'OurTermsAndConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email address.`
+  String get invalidEmail {
+    return Intl.message(
+      'Invalid email address.',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password provided is too weak.`
+  String get weakPassword {
+    return Intl.message(
+      'The password provided is too weak.',
+      name: 'weakPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The account already exists for that email.`
+  String get emailAlreadyInUse {
+    return Intl.message(
+      'The account already exists for that email.',
+      name: 'emailAlreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This user account has been disabled.`
+  String get userDisabled {
+    return Intl.message(
+      'This user account has been disabled.',
+      name: 'userDisabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No user found for that email.`
+  String get userNotFound {
+    return Intl.message(
+      'No user found for that email.',
+      name: 'userNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect password.`
+  String get wrongPassword {
+    return Intl.message(
+      'Incorrect password.',
+      name: 'wrongPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Network error. Please check your internet connection.`
+  String get networkRequestFailed {
+    return Intl.message(
+      'Network error. Please check your internet connection.',
+      name: 'networkRequestFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many attempts. Please try again later.`
+  String get tooManyRequests {
+    return Intl.message(
+      'Too many attempts. Please try again later.',
+      name: 'tooManyRequests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up failed. Please try again.`
+  String get SignupFailed {
+    return Intl.message(
+      'Sign up failed. Please try again.',
+      name: 'SignupFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected error. Try again later.`
+  String get unexpected {
+    return Intl.message(
+      'Unexpected error. Try again later.',
+      name: 'unexpected',
       desc: '',
       args: [],
     );

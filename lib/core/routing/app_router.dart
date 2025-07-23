@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/core/routing/routes.dart';
-import 'package:fruit_app/features/auth/ui/views/login_view.dart';
+import 'package:fruit_app/features/auth/ui/views/signin_view.dart';
 import 'package:fruit_app/features/auth/ui/views/sign_up_view.dart';
 import 'package:fruit_app/features/on_boarding/ui/on_boarding_view.dart';
 import 'package:fruit_app/features/splash/ui/splash_view.dart';

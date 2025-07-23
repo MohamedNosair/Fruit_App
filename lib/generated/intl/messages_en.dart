@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "OurTermsAndConditions": MessageLookupByLibrary.simpleMessage(
       "our Terms and Conditions.",
     ),
+    "SignupFailed": MessageLookupByLibrary.simpleMessage(
+      "Sign up failed. Please try again.",
+    ),
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account",
     ),
@@ -37,9 +40,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account? ",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
+      "The account already exists for that email.",
+    ),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("forget password ?"),
     "fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "hub": MessageLookupByLibrary.simpleMessage("HUB"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Invalid email address.",
+    ),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginWithApple": MessageLookupByLibrary.simpleMessage("login with Apple"),
     "loginWithFacebook": MessageLookupByLibrary.simpleMessage(
@@ -49,6 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "login with Google",
     ),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "networkRequestFailed": MessageLookupByLibrary.simpleMessage(
+      "Network error. Please check your internet connection.",
+    ),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("password"),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("Search and shop"),
@@ -61,6 +73,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "subTitlePageViewTwo": MessageLookupByLibrary.simpleMessage(
       "We offer you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you\'re choosing the perfect fruit.",
     ),
+    "tooManyRequests": MessageLookupByLibrary.simpleMessage(
+      "Too many attempts. Please try again later.",
+    ),
+    "unexpected": MessageLookupByLibrary.simpleMessage(
+      "Unexpected error. Try again later.",
+    ),
+    "userDisabled": MessageLookupByLibrary.simpleMessage(
+      "This user account has been disabled.",
+    ),
+    "userNotFound": MessageLookupByLibrary.simpleMessage(
+      "No user found for that email.",
+    ),
+    "weakPassword": MessageLookupByLibrary.simpleMessage(
+      "The password provided is too weak.",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome To"),
+    "welcomeName": MessageLookupByLibrary.simpleMessage("Welcome "),
+    "wrongPassword": MessageLookupByLibrary.simpleMessage(
+      "Incorrect password.",
+    ),
   };
 }

@@ -7,7 +7,6 @@ import 'package:fruit_app/core/utils/extension.dart';
 import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/generated/l10n.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:svg_flutter/svg.dart';
 
 class PageViewItem extends StatelessWidget {

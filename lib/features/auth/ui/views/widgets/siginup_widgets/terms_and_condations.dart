@@ -6,25 +6,21 @@ import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/core/widgets/custom_check_box.dart';
 import 'package:fruit_app/generated/l10n.dart';
 
-class TermsAndCondations extends StatefulWidget {
-  const TermsAndCondations({super.key});
+// ignore: must_be_immutable
 
-  @override
-  State<TermsAndCondations> createState() => _TermsAndCondationsState();
-}
+class TermsAndCondations extends StatelessWidget {
+  final void Function()? onTap;
+  final bool  isChecked;
 
-class _TermsAndCondationsState extends State<TermsAndCondations> {
-  bool isChecked = false;
+  const TermsAndCondations({super.key, this.onTap, required this.isChecked});
+
   @override
   Widget build(BuildContext context) {
     return Row(
       spacing: 16.w,
       children: [
         GestureDetector(
-          onTap: () {
-            isChecked = !isChecked;
-            setState(() {});
-          },
+          onTap: onTap,
           child: CustomCheckBox(isChecked: isChecked),
         ),
         Expanded(
