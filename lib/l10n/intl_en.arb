@@ -34,7 +34,10 @@
   "networkRequestFailed": "Network error. Please check your internet connection.",
   "tooManyRequests": "Too many attempts. Please try again later.",
   "SignupFailed": "Sign up failed. Please try again.",
-  "unexpected": "Unexpected error. Try again later.",
+  "SigninFailed": "Sign in failed. Please try again.",
+  "FacebookLoginCancelled": "Facebook login cancelled.",
+  "FacebookLoginOperationInProgress": "Facebook login operation in progress",
+  "unexpected": "Facebook login operation in progress",
 
     "subTitlePageViewOne": "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.",
     "subTitlePageViewTwo": "We offer you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you're choosing the perfect fruit."

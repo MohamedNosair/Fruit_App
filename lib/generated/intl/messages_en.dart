@@ -22,8 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "FacebookLoginCancelled": MessageLookupByLibrary.simpleMessage(
+      "Facebook login cancelled.",
+    ),
+    "FacebookLoginOperationInProgress": MessageLookupByLibrary.simpleMessage(
+      "Facebook login operation in progress",
+    ),
     "OurTermsAndConditions": MessageLookupByLibrary.simpleMessage(
       "our Terms and Conditions.",
+    ),
+    "SigninFailed": MessageLookupByLibrary.simpleMessage(
+      "Sign in failed. Please try again.",
     ),
     "SignupFailed": MessageLookupByLibrary.simpleMessage(
       "Sign up failed. Please try again.",
@@ -77,7 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Too many attempts. Please try again later.",
     ),
     "unexpected": MessageLookupByLibrary.simpleMessage(
-      "Unexpected error. Try again later.",
+      "Facebook login operation in progress",
     ),
     "userDisabled": MessageLookupByLibrary.simpleMessage(
       "This user account has been disabled.",

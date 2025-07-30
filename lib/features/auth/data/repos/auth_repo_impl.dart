@@ -64,4 +64,16 @@ class AuthRepoImpl extends AuthRepo {
     }
 
   }
+  
+  @override
+  Future<Either<Faliure, UserEntities>> signinWithFacebook() async {
+    try {
+      var user = await firbaseAuthService.signInWithFacebook();
+
+      return right(UserModel.fromFirbaseUser(user));
+    } on ExceptionCustom catch (e) {
+      log('#####${e.toString()}');
+      return left(ServerFaluire(message: e.toString()));
+    }
+  }
 }

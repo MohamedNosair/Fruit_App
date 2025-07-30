@@ -314,10 +314,40 @@ class S {
     );
   }
 
-  /// `Unexpected error. Try again later.`
+  /// `Sign in failed. Please try again.`
+  String get SigninFailed {
+    return Intl.message(
+      'Sign in failed. Please try again.',
+      name: 'SigninFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Facebook login cancelled.`
+  String get FacebookLoginCancelled {
+    return Intl.message(
+      'Facebook login cancelled.',
+      name: 'FacebookLoginCancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Facebook login operation in progress`
+  String get FacebookLoginOperationInProgress {
+    return Intl.message(
+      'Facebook login operation in progress',
+      name: 'FacebookLoginOperationInProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Facebook login operation in progress`
   String get unexpected {
     return Intl.message(
-      'Unexpected error. Try again later.',
+      'Facebook login operation in progress',
       name: 'unexpected',
       desc: '',
       args: [],

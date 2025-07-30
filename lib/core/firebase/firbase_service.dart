@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruit_app/core/exception/exception_custom.dart';
 import 'package:fruit_app/generated/l10n.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -8,6 +9,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 class FirbaseAuthService {
   static final GoogleSignIn googleSignin = GoogleSignIn.instance;
   static bool inistialized = false;
+
+  /// create user with email and password
   Future<User> createEmailAndPassword({
     required String emailAddress,
     required String password,
@@ -52,6 +55,7 @@ class FirbaseAuthService {
     }
   }
 
+  /// sign in with email and password
   Future<User> sigininWithEmailAndPassword({
     required String emailAddress,
     required String password,
@@ -90,9 +94,7 @@ class FirbaseAuthService {
     }
   }
 
-
-
-
+  /// initialize Google SignIn
   static Future<void> initSignInWithGoogle() async {
     if (!inistialized) {
       await googleSignin.initialize(
@@ -103,8 +105,9 @@ class FirbaseAuthService {
     inistialized = true;
   }
 
+  /// sign in with Google
   Future<User> signInWithGoogle() async {
-    initSignInWithGoogle();
+    await initSignInWithGoogle();
     final GoogleSignInAccount? account = await googleSignin.authenticate();
     if (account == null) {
       throw FirebaseAuthException(
@@ -131,21 +134,69 @@ class FirbaseAuthService {
           message: 'fail to retrieve access token',
         );
       }
-    auth = auth2;
+      auth = auth2;
     }
 
-final credential = GoogleAuthProvider.credential(
+    final credential = GoogleAuthProvider.credential(
       idToken: idToken,
       accessToken: accessToken,
     );
-    return (await FirebaseAuth.instance.signInWithCredential(credential))
-        .user!;
+
+    log(
+      '${(await FirebaseAuth.instance.signInWithCredential(credential)).user!}',
+    );
+    return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
   }
 
+  /// sign in with facebook
 
+  Future<User> signInWithFacebook() async {
+    // Trigger the sign-in flow
+    final LoginResult loginResult = await FacebookAuth.instance.login();
 
+    switch (loginResult.status) {
+      case LoginStatus.success:
+       { final AccessToken? accessToken = loginResult.accessToken;
+        final OAuthCredential facebookAuthCredential =
+            FacebookAuthProvider.credential(accessToken!.tokenString);
+        final UserCredential userCredential = await FirebaseAuth.instance
+            .signInWithCredential(facebookAuthCredential);
+        final User? user = userCredential.user;
+        return user!;
+      }
+      case LoginStatus.cancelled:
+       
+        throw ExceptionCustom(message: S.current.FacebookLoginCancelled);
+      case LoginStatus.failed:
+        
+        throw ExceptionCustom(message: S.current.SigninFailed);
+      case LoginStatus.operationInProgress:
+       
+        throw ExceptionCustom(message: S.current.FacebookLoginOperationInProgress);
+    }
+
+    // if (loginResult.status == LoginStatus.success) {
+    //   final AccessToken? accessToken = loginResult.accessToken;
+
+    //   final OAuthCredential facebookAuthCredential =
+    //       FacebookAuthProvider.credential(accessToken!.tokenString);
+
+    //   final UserCredential userCredential = await FirebaseAuth.instance
+    //       .signInWithCredential(facebookAuthCredential);
+
+    //   final User? user = userCredential.user;
+    //   return user!; // Ensure user is not null
+    // } else {
+    //   print("Facebook login failed: ${loginResult.status}");
+    //   throw ExceptionCustom(
+    //     message: loginResult.message ?? S.current.unexpected,
+    //   );
+    // }
+  }
+
+  /// sign out from Firebase and Google
   Future<void> signOut() async {
-     await FirebaseAuth.instance.signOut();
-      await googleSignin.signOut();
+    await FirebaseAuth.instance.signOut();
+    await googleSignin.signOut();
   }
 }

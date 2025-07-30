@@ -27,7 +27,9 @@ class SigninWithSocialMedia extends StatelessWidget {
           text: S.current.loginWithApple,
         ),
         SocialLoginButton(
-          onPressed: () {},
+          onPressed: () {
+            context.read<SigninCubit>().signinWithFacebook();
+          },
           image: AppImages.facebook,
           text: S.current.loginWithFacebook,
         ),
