@@ -10,6 +10,10 @@ class FirbaseAuthService {
   static final GoogleSignIn googleSignin = GoogleSignIn.instance;
   static bool inistialized = false;
 
+  Future<void> deleteUser() async {
+    await FirebaseAuth.instance.currentUser?.delete();
+  }
+
   /// create user with email and password
   Future<User> createEmailAndPassword({
     required String emailAddress,
@@ -107,6 +111,7 @@ class FirbaseAuthService {
 
   /// sign in with Google
   Future<User> signInWithGoogle() async {
+
     await initSignInWithGoogle();
     final GoogleSignInAccount? account = await googleSignin.authenticate();
     if (account == null) {
@@ -141,11 +146,12 @@ class FirbaseAuthService {
       idToken: idToken,
       accessToken: accessToken,
     );
+    var user = (await FirebaseAuth.instance.signInWithCredential(
+      credential,
+    )).user!;
+    return user;
 
-    log(
-      '${(await FirebaseAuth.instance.signInWithCredential(credential)).user!}',
-    );
-    return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
+
   }
 
   /// sign in with facebook
@@ -156,42 +162,24 @@ class FirbaseAuthService {
 
     switch (loginResult.status) {
       case LoginStatus.success:
-       { final AccessToken? accessToken = loginResult.accessToken;
-        final OAuthCredential facebookAuthCredential =
-            FacebookAuthProvider.credential(accessToken!.tokenString);
-        final UserCredential userCredential = await FirebaseAuth.instance
-            .signInWithCredential(facebookAuthCredential);
-        final User? user = userCredential.user;
-        return user!;
-      }
+        {
+          final AccessToken? accessToken = loginResult.accessToken;
+          final OAuthCredential facebookAuthCredential =
+              FacebookAuthProvider.credential(accessToken!.tokenString);
+          final UserCredential userCredential = await FirebaseAuth.instance
+              .signInWithCredential(facebookAuthCredential);
+          final User? user = userCredential.user;
+          return user!;
+        }
       case LoginStatus.cancelled:
-       
         throw ExceptionCustom(message: S.current.FacebookLoginCancelled);
       case LoginStatus.failed:
-        
         throw ExceptionCustom(message: S.current.SigninFailed);
       case LoginStatus.operationInProgress:
-       
-        throw ExceptionCustom(message: S.current.FacebookLoginOperationInProgress);
+        throw ExceptionCustom(
+          message: S.current.FacebookLoginOperationInProgress,
+        );
     }
-
-    // if (loginResult.status == LoginStatus.success) {
-    //   final AccessToken? accessToken = loginResult.accessToken;
-
-    //   final OAuthCredential facebookAuthCredential =
-    //       FacebookAuthProvider.credential(accessToken!.tokenString);
-
-    //   final UserCredential userCredential = await FirebaseAuth.instance
-    //       .signInWithCredential(facebookAuthCredential);
-
-    //   final User? user = userCredential.user;
-    //   return user!; // Ensure user is not null
-    // } else {
-    //   print("Facebook login failed: ${loginResult.status}");
-    //   throw ExceptionCustom(
-    //     message: loginResult.message ?? S.current.unexpected,
-    //   );
-    // }
   }
 
   /// sign out from Firebase and Google

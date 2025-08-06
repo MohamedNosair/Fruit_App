@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_app/core/utils/constant.dart';
+import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/features/auth/domain/entities/user_entities.dart';
 import 'package:fruit_app/features/auth/domain/repos/auth_repos.dart';
 import 'package:meta/meta.dart';
@@ -9,7 +13,7 @@ class SignupCubit extends Cubit<SignupState> {
   SignupCubit(this.authRepo) : super(SignupInitial());
   final AuthRepo authRepo;
   Future<void> createUserWithEmailAndPassword(
-    String name,
+    name,
     password,
     emailAddress,
   ) async {
@@ -25,6 +29,9 @@ class SignupCubit extends Cubit<SignupState> {
       },
       (userEntitie) {
         emit(SignupSuccessState(userEntities: userEntitie));
+        storage.write(kUserUid, userEntitie.uId);
+        log('SignupCubit.Uid: ${userEntitie.uId}');
+        
       },
     );
   }
@@ -35,10 +42,4 @@ class SignupCubit extends Cubit<SignupState> {
     emit(togglePasswordVisibilityState());
   }
 
-  //  bool isTermsAccepted = false;
-  // toggleTermsAccepted() {
-  //   isTermsAccepted = !isTermsAccepted;
-  //   emit(toggleTermsAcceptedState());
-   
-  // }
 }

@@ -17,7 +17,6 @@ class SigninCubit extends Cubit<SigninState> {
 
 
   Future<void> signinWithEmailAndPassword(
-    
     password,
     emailAddress,
   ) async {
@@ -49,6 +48,8 @@ class SigninCubit extends Cubit<SigninState> {
       },
     );
   }
+
+  
   Future<void> signinWithFacebook() async {
     emit(SigninLoadingState());
     final result = await authRepo.signinWithFacebook();

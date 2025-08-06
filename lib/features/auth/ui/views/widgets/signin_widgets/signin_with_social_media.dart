@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,11 +23,13 @@ class SigninWithSocialMedia extends StatelessWidget {
           image: AppImages.google,
           text: S.current.loginWithGoogle,
         ),
+        if (Platform.isIOS)
         SocialLoginButton(
           onPressed: () {},
           image: AppImages.apple,
           text: S.current.loginWithApple,
         ),
+        
         SocialLoginButton(
           onPressed: () {
             context.read<SigninCubit>().signinWithFacebook();

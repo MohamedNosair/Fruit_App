@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/utils/app_images.dart';
 import 'package:fruit_app/core/utils/constant.dart';
+import 'package:fruit_app/core/utils/extension.dart';
 import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:svg_flutter/svg.dart';
 import 'package:intl/intl.dart';
@@ -40,14 +41,22 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-  void excuteNavigation() {
-    bool  isOnBoardingViewSeen = storage.read(kIsOnBoardingViewSeen) ;
+  void excuteNavigation() async {
+    bool isOnBoardingViewSeen =await storage.read(kIsOnBoardingViewSeen)?? false;
+    String  isUserLoggedIn = await storage.read(kUserUid) ?? '';
     Future.delayed(Duration(seconds: 5), () {
-      if (isOnBoardingViewSeen) {
+      if (isUserLoggedIn.isNotNullOrNotEmpty()) {
+        Navigator.pushReplacementNamed(context, Routes.homeView);
+      } else if (isOnBoardingViewSeen) {
         Navigator.pushReplacementNamed(context, Routes.loginView);
       } else {
         Navigator.pushReplacementNamed(context, Routes.onBoardingView);
       }
+      // if (isOnBoardingViewSeen) {
+      //   Navigator.pushReplacementNamed(context, Routes.loginView);
+      // } else {
+      //   Navigator.pushReplacementNamed(context, Routes.onBoardingView);
+      // }
     });
   }
 }

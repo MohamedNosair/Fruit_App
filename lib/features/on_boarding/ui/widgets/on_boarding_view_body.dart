@@ -5,6 +5,7 @@ import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/utils/constant.dart';
 import 'package:fruit_app/core/utils/extension.dart';
+import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/core/widgets/custom_buttom.dart';
 import 'package:fruit_app/features/on_boarding/ui/widgets/on_boarding_page_view.dart';
@@ -66,9 +67,8 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             maintainSemantics: true,
             child: CustomButtom(
               text: S.of(context).startNow,
-              onPressed: () {
-                // storage.writeBool(kIsOnBoardingViewSeen, true);
-                GetStorage().write(kIsOnBoardingViewSeen, true);
+              onPressed: () async {
+               await storage.write(kIsOnBoardingViewSeen, true);
                 context.pushReplacementNamed(Routes.loginView);
               },
             ),

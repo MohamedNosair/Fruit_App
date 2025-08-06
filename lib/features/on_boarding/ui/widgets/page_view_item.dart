@@ -47,8 +47,8 @@ class PageViewItem extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(16.r),
                   child: TextButton(
-                    onPressed: () {
-                      storage.write(kIsOnBoardingViewSeen, true);
+                    onPressed: () async{
+                     await storage.write(kIsOnBoardingViewSeen, true);
                       context.pushReplacementNamed(Routes.loginView);
                     },
                     child: Text(

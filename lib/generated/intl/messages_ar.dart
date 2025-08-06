@@ -22,6 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "FacebookLoginCancelled": MessageLookupByLibrary.simpleMessage(
+      "تم إلغاء تسجيل الدخول عبر فيسبوك.",
+    ),
+    "FacebookLoginOperationInProgress": MessageLookupByLibrary.simpleMessage(
+      "عملية تسجيل الدخول عبر فيسبوك جارية.",
+    ),
     "OurTermsAndConditions": MessageLookupByLibrary.simpleMessage(
       "الشروط والأحكام الخاصة بنا",
     ),

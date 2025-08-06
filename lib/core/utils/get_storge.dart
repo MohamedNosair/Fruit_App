@@ -1,19 +1,20 @@
 import 'package:get_storage/get_storage.dart';
 
 class storage {
-   static final  box = GetStorage();
   static Future<void> initGetStorge() async {
     await GetStorage.init();
   }
 
- 
-  static read(String key) {
-  return  box.read(key) ?? false;
+  static final box = GetStorage();
+  static read(key) {
+    return box.read(key);
   }
-  
-  static write(String key, bool value) {
+
+  static write(String key, value) {
     box.write(key, value);
   }
 
-
+  static remove(key) {
+    box.remove(key);
+  }
 }

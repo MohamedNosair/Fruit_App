@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,10 +39,12 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               CustomTextFormField(
                 onSaved: (value) {
                   name = value!;
+                  
                 },
                 hintText: S.current.name,
                 textInputType: TextInputType.name,
               ),
+
               CustomTextFormField(
                 onSaved: (value) {
                   emailAddress = value!;

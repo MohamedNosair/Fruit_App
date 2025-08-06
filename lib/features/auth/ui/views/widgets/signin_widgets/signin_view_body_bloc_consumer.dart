@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/utils/extension.dart';
 import 'package:fruit_app/core/widgets/custom_show_dialog.dart';
 import 'package:fruit_app/core/widgets/custom_snackbar.dart';
@@ -17,6 +18,10 @@ class SigininViewBodyBlocConsumer extends StatelessWidget {
         if (state is SigninLoadingState) {
           LoadingDialog.show(context);
         } else if (state is SigninSuccessState) {
+          Navigator.of(context).pushNamedAndRemoveUntil(
+            Routes.homeView,
+            (route) => false,
+          );
           context.pop();
           customSnackBar(
             context: context,
