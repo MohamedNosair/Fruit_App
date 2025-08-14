@@ -39,7 +39,6 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               CustomTextFormField(
                 onSaved: (value) {
                   name = value!;
-                  
                 },
                 hintText: S.current.name,
                 textInputType: TextInputType.name,
@@ -79,7 +78,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   setState(() {});
                 },
               ),
-              CustomButtom(
+              CustomButton(
                 text: S.current.createNewAccount,
                 onPressed: () {
                   if (isTermsAccepted) {

@@ -26,8 +26,8 @@ class FruitHubApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
-          locale: Locale('ar'),
-          debugShowCheckedModeBanner: false,
+          locale: Locale('en'),
+          debugShowCheckedModeBanner: true,
           home: SplashView(),
           onGenerateRoute: appRouter.generateRoute,
         );

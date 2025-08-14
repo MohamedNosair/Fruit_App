@@ -10,12 +10,12 @@ class UserModel extends UserEntities {
     required super.uId,
   });
 
-  factory UserModel.fromFirbaseUser(User user) {
+  factory UserModel.fromFirbaseUser(User? user) {
     return UserModel(
-      name: user.displayName ?? '',
-      emailAddress: user.email ?? '',
-      uId: user.uid,
-      imageUrl: user.photoURL ?? '',
+      name: user?.displayName ?? '',
+      emailAddress: user?.email ?? '',
+      uId: user?.uid ?? '',
+      imageUrl: user?.photoURL ?? '',
     
     );
   }
@@ -29,4 +29,6 @@ class UserModel extends UserEntities {
       imageUrl: json[kimageUrl] ?? '',
     );
   }
+
+
 }

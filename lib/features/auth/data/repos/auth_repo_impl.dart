@@ -7,12 +7,9 @@ import 'package:fruit_app/core/exception/exception_custom.dart';
 import 'package:fruit_app/core/firebase/database_service.dart';
 import 'package:fruit_app/core/firebase/firbase_service.dart';
 import 'package:fruit_app/core/utils/backend_end_points.dart';
-import 'package:fruit_app/core/utils/constant.dart';
-import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/features/auth/data/model/user_model.dart';
 import 'package:fruit_app/features/auth/domain/entities/user_entities.dart';
 import 'package:fruit_app/features/auth/domain/repos/auth_repos.dart';
-import 'package:get_storage/get_storage.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FirbaseAuthService firbaseAuthService;
@@ -81,31 +78,29 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Faliure, UserEntities>> signinWithGoogle() async {
     User? user;
+
     try {
       user = await firbaseAuthService.signInWithGoogle();
-      var userModel = UserEntities(
-        imageUrl: user.photoURL ?? '',
-        name: user.displayName ?? '',
-        emailAddress: user.email ?? '',
-        uId: user.uid,
-      );
+
+      var userEntity = UserModel.fromFirbaseUser(user);
 
       var isUserExists = await databaseService.isUserExists(
         path: BackendEndPoints.isUserExists,
         documentId: user.uid,
       );
       if (isUserExists) {
-        await addUserData(user: userModel);
-      } else {
         await getUserData(documentId: user.uid);
+      } else {
+        await addUserData(user: userEntity);
       }
-      return right(userModel);
+      return right(userEntity);
     } on ExceptionCustom catch (e) {
       if (user != null) {
         await firbaseAuthService.deleteUser();
       }
       return left(ServerFaluire(message: e.message));
     } catch (e) {
+      log('AuthRepoImpl.signinWithGoogle: ${e.toString()}');
       if (user != null) {
         await firbaseAuthService.deleteUser();
       }
@@ -140,7 +135,7 @@ class AuthRepoImpl extends AuthRepo {
     }
   }
 
-  ///
+  /// add user data to database
   @override
   Future<void> addUserData({required UserEntities user}) async {
     await databaseService.addData(
@@ -150,6 +145,7 @@ class AuthRepoImpl extends AuthRepo {
     );
   }
 
+  /// get user data from database
   @override
   Future<UserEntities> getUserData({required String documentId}) async {
     var userData = await databaseService.getData(

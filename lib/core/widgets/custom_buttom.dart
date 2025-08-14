@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/themes/styles.dart';
 
-class CustomButtom extends StatelessWidget {
-  const CustomButtom({super.key, required this.text, required this.onPressed});
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key, required this.text, required this.onPressed});
   final String text;
   final VoidCallback onPressed;
   @override

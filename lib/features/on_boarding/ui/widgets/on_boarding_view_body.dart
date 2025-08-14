@@ -65,10 +65,10 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             maintainSize: true,
             maintainInteractivity: true,
             maintainSemantics: true,
-            child: CustomButtom(
+            child: CustomButton(
               text: S.of(context).startNow,
               onPressed: () async {
-               await storage.write(kIsOnBoardingViewSeen, true);
+                await storage.write(kIsOnBoardingViewSeen, true);
                 context.pushReplacementNamed(Routes.loginView);
               },
             ),

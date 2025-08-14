@@ -32,6 +32,7 @@ class SigninCubit extends Cubit<SigninState> {
       },
       (userEntitie) {
         emit(SigninSuccessState(userEntities: userEntitie));
+        
       },
     );
   }

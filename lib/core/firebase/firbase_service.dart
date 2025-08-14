@@ -111,7 +111,6 @@ class FirbaseAuthService {
 
   /// sign in with Google
   Future<User> signInWithGoogle() async {
-
     await initSignInWithGoogle();
     final GoogleSignInAccount? account = await googleSignin.authenticate();
     if (account == null) {
@@ -146,12 +145,19 @@ class FirbaseAuthService {
       idToken: idToken,
       accessToken: accessToken,
     );
+    if (credential.accessToken == null) {
+      throw FirebaseAuthException(
+        code: 'No Access Token',
+        message: 'fail to retrieve access token',
+      );
+    }
     var user = (await FirebaseAuth.instance.signInWithCredential(
       credential,
     )).user!;
+
+   
+
     return user;
-
-
   }
 
   /// sign in with facebook

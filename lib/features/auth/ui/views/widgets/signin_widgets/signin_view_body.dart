@@ -47,7 +47,7 @@ class _SigininViewBodyState extends State<SigninViewBody> {
                 textInputType: TextInputType.emailAddress,
               ),
               CustomTextFormField(
-                 obscureText: context.watch<SigninCubit>().obscureText,
+                obscureText: context.watch<SigninCubit>().obscureText,
                 onSaved: (value) {
                   password = value!;
                 },
@@ -69,7 +69,7 @@ class _SigininViewBodyState extends State<SigninViewBody> {
               const ForgetPassword(),
 
               heightSpace(16),
-              CustomButtom(
+              CustomButton(
                 text: S.current.login,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {

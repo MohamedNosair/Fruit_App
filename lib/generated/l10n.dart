@@ -354,6 +354,76 @@ class S {
     );
   }
 
+  /// `More`
+  String get more {
+    return Intl.message('More', name: 'more', desc: '', args: []);
+  }
+
+  /// `Best Seller`
+  String get bestSeller {
+    return Intl.message('Best Seller', name: 'bestSeller', desc: '', args: []);
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Good Morning`
+  String get goodMorning {
+    return Intl.message(
+      'Good Morning',
+      name: 'goodMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Good Evening`
+  String get goodEvening {
+    return Intl.message(
+      'Good Evening',
+      name: 'goodEvening',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search...`
+  String get search {
+    return Intl.message('Search...', name: 'search', desc: '', args: []);
+  }
+
+  /// `Shop now`
+  String get shopNow {
+    return Intl.message('Shop now', name: 'shopNow', desc: '', args: []);
+  }
+
+  /// `EG`
+  String get eg {
+    return Intl.message('EG', name: 'eg', desc: '', args: []);
+  }
+
+  /// `KG`
+  String get kg {
+    return Intl.message('KG', name: 'kg', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Products`
+  String get products {
+    return Intl.message('Products', name: 'products', desc: '', args: []);
+  }
+
+  /// `Cart`
+  String get cart {
+    return Intl.message('Cart', name: 'cart', desc: '', args: []);
+  }
+
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.`
   String get subTitlePageViewOne {
     return Intl.message(

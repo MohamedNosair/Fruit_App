@@ -29,8 +29,7 @@ class SignupCubit extends Cubit<SignupState> {
       },
       (userEntitie) {
         emit(SignupSuccessState(userEntities: userEntitie));
-        storage.write(kUserUid, userEntitie.uId);
-        log('SignupCubit.Uid: ${userEntitie.uId}');
+  
         
       },
     );

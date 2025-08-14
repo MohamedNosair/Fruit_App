@@ -40,24 +40,31 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account",
     ),
+    "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
     "byCreatingAnAccountYouAgreeTo": MessageLookupByLibrary.simpleMessage(
       "By creating an account, you agree to",
     ),
+    "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account."),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("Create account"),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
+    "eg": MessageLookupByLibrary.simpleMessage("EG"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",
     ),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("forget password ?"),
     "fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
+    "goodEvening": MessageLookupByLibrary.simpleMessage("Good Evening"),
+    "goodMorning": MessageLookupByLibrary.simpleMessage("Good Morning"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "hub": MessageLookupByLibrary.simpleMessage("HUB"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "Invalid email address.",
     ),
+    "kg": MessageLookupByLibrary.simpleMessage("KG"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginWithApple": MessageLookupByLibrary.simpleMessage("login with Apple"),
     "loginWithFacebook": MessageLookupByLibrary.simpleMessage(
@@ -66,13 +73,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "login with Google",
     ),
+    "more": MessageLookupByLibrary.simpleMessage("More"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "networkRequestFailed": MessageLookupByLibrary.simpleMessage(
       "Network error. Please check your internet connection.",
     ),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("password"),
+    "products": MessageLookupByLibrary.simpleMessage("Products"),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "search": MessageLookupByLibrary.simpleMessage("Search..."),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("Search and shop"),
+    "shopNow": MessageLookupByLibrary.simpleMessage("Shop now"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "startNow": MessageLookupByLibrary.simpleMessage("Start Now!"),

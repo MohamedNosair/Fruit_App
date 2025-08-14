@@ -37,14 +37,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "تمتلك حساب بالفعل؟",
     ),
+    "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
     "byCreatingAnAccountYouAgreeTo": MessageLookupByLibrary.simpleMessage(
       "من خلال إنشاء حساب،فإنك توافق على",
     ),
+    "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
     "createAccount": MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لا تمتلك حساب ؟",
     ),
+    "eg": MessageLookupByLibrary.simpleMessage("جنيه"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "يوجد حساب بالفعل بهذا البريد الإلكتروني.",
@@ -53,10 +56,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "نسيت كلمة المرور ؟",
     ),
     "fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
+    "goodEvening": MessageLookupByLibrary.simpleMessage("مساء الخير"),
+    "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير"),
+    "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "hub": MessageLookupByLibrary.simpleMessage("HUB"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "عنوان البريد الإلكتروني غير صالح.",
     ),
+    "kg": MessageLookupByLibrary.simpleMessage("كيلو"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginWithApple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة ابل"),
     "loginWithFacebook": MessageLookupByLibrary.simpleMessage(
@@ -65,13 +72,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "تسجيل بواسطة جوجل",
     ),
+    "more": MessageLookupByLibrary.simpleMessage("المزيد"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم بالكامل"),
     "networkRequestFailed": MessageLookupByLibrary.simpleMessage(
       "فشل الاتصال بالشبكة. يرجى التحقق من اتصال الإنترنت.",
     ),
     "or": MessageLookupByLibrary.simpleMessage("أو"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+    "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "search": MessageLookupByLibrary.simpleMessage("ابحث عن..."),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
+    "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
     "signUp": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),
     "startNow": MessageLookupByLibrary.simpleMessage("ابدأ الان"),
