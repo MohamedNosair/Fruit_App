@@ -21,7 +21,7 @@ class SigininViewBodyBlocConsumer extends StatelessWidget {
         if (state is SigninLoadingState) {
           LoadingDialog.show(context);
         } else if (state is SigninSuccessState) {
-          storage.write(kUserUid, state.userEntities.uId);
+          
           context.pop();
           context.pushNamedAndRemoveUntil(
             Routes.homeView,

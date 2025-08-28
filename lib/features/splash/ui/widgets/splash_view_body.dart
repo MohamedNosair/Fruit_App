@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:fruit_app/core/firebase/firbase_service.dart';
 import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/utils/app_images.dart';
 import 'package:fruit_app/core/utils/constant.dart';
@@ -41,32 +41,20 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-  void excuteNavigation() async {
-    bool isOnBoardingViewSeen =await storage.read(kIsOnBoardingViewSeen)?? false;
-    String  isUserLoggedIn = await storage.read(kUserUid) ?? '';
+  void excuteNavigation()  {
+    bool isOnBoardingViewSeen =
+         storage.read(kIsOnBoardingViewSeen) ?? false;
+    bool isUserLoggedIn = FirbaseAuthService().isSignedIn();
     Future.delayed(Duration(seconds: 5), () {
-
-
-        Navigator.pushReplacementNamed(context, Routes.homeView);
-
-
-      // log( 'isUserLoggedIn: $isUserLoggedIn');
-      // log( 'isOnBoardingViewSeen: ${storage.read(kUserUid)}}');
-      // if (isUserLoggedIn.isNotNullOrNotEmpty()) {
-      //   Navigator.pushReplacementNamed(context, Routes.homeView);
-      // } else if (isOnBoardingViewSeen) {
-      //   Navigator.pushReplacementNamed(context, Routes.loginView);
-      // } else {
-      //   Navigator.pushReplacementNamed(context, Routes.onBoardingView);
-      // }
-
-
-      ///////////////////////////////////////////////
-      // if (isOnBoardingViewSeen) {
-      //   Navigator.pushReplacementNamed(context, Routes.loginView);
-      // } else {
-      //   Navigator.pushReplacementNamed(context, Routes.onBoardingView);
-      // }
+      if (isOnBoardingViewSeen) {
+        if (isUserLoggedIn) {
+          Navigator.pushReplacementNamed(context, Routes.homeView);
+        } else {
+          Navigator.pushReplacementNamed(context, Routes.onBoardingView);
+        }
+      }else {
+        Navigator.pushReplacementNamed(context, Routes.onBoardingView);
+      }
     });
   }
 }

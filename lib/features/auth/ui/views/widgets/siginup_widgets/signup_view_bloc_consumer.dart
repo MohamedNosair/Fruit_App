@@ -22,9 +22,9 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
         if (state is SignupLoadingState) {
           LoadingDialog.show(context);
         } else if (state is SignupSuccessState) {
-          storage.write(kUserUid, state.userEntities.uId);
+          
           context.pop();
-          log('SignupCubit.Uid: ${state.userEntities.uId}');
+          
           context.pushNamedAndRemoveUntil(
             Routes.homeView,
             predicate: (Route<dynamic> route) => false,

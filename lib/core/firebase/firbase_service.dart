@@ -155,8 +155,6 @@ class FirbaseAuthService {
       credential,
     )).user!;
 
-   
-
     return user;
   }
 
@@ -187,6 +185,8 @@ class FirbaseAuthService {
         );
     }
   }
+
+  bool isSignedIn() => FirebaseAuth.instance.currentUser != null;
 
   /// sign out from Firebase and Google
   Future<void> signOut() async {

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
@@ -7,6 +8,8 @@ import 'package:fruit_app/core/exception/exception_custom.dart';
 import 'package:fruit_app/core/firebase/database_service.dart';
 import 'package:fruit_app/core/firebase/firbase_service.dart';
 import 'package:fruit_app/core/utils/backend_end_points.dart';
+import 'package:fruit_app/core/utils/constant.dart';
+import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/features/auth/data/model/user_model.dart';
 import 'package:fruit_app/features/auth/domain/entities/user_entities.dart';
 import 'package:fruit_app/features/auth/domain/repos/auth_repos.dart';
@@ -40,6 +43,7 @@ class AuthRepoImpl extends AuthRepo {
       );
       await addUserData(user: userModel);
       var userData = await getUserData(documentId: user.uid);
+      await saveUserData(user: userData);
       return right(userData);
     } on ExceptionCustom catch (e) {
       if (user != null) {
@@ -66,8 +70,9 @@ class AuthRepoImpl extends AuthRepo {
       user = await firbaseAuthService.sigininWithEmailAndPassword(
         emailAddress: emailAddress,
         password: password,
-      );
+      );      
       var userData = await getUserData(documentId: user.uid);
+      await saveUserData(user: userData);
       return right(userData);
     } on ExceptionCustom catch (e) {
       return left(ServerFaluire(message: e.message));
@@ -93,6 +98,7 @@ class AuthRepoImpl extends AuthRepo {
       } else {
         await addUserData(user: userEntity);
       }
+      await saveUserData(user: userEntity);
       return right(userEntity);
     } on ExceptionCustom catch (e) {
       if (user != null) {
@@ -114,13 +120,14 @@ class AuthRepoImpl extends AuthRepo {
     User? user;
     try {
       user = await firbaseAuthService.signInWithFacebook();
-      var userModel = UserEntities(
+      var userModel =  UserEntities(
         imageUrl: user.photoURL ?? '',
         name: user.displayName ?? '',
         emailAddress: user.email ?? '',
         uId: user.uid,
       );
       await addUserData(user: userModel);
+      await saveUserData(user: userModel);
       return right(userModel);
     } on ExceptionCustom catch (e) {
       if (user != null) {
@@ -139,7 +146,7 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<void> addUserData({required UserEntities user}) async {
     await databaseService.addData(
-      data: user.toMap(),
+      data: UserModel.fromEntity(user).toMap(),
       path: BackendEndPoints.addUserData,
       documentId: user.uId,
     );
@@ -153,5 +160,11 @@ class AuthRepoImpl extends AuthRepo {
       documentId: documentId,
     );
     return UserModel.fromJson(userData);
+  }
+  
+  @override
+  Future saveUserData({required UserEntities user})async {
+    var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
+    await storage.write(kUserData, jsonData);
   }
 }

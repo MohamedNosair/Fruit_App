@@ -6,4 +6,4 @@ String kname = 'name';
 String kemailAddress = 'emailAddress';
 String kimageUrl = 'imageUrl';
 String kuId = 'uId';
-String kUserUid = 'userUid';
+String kUserData = 'userData';

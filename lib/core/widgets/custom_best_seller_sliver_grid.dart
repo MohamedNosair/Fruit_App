@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/widgets/fruit_item.dart';
 
-class BestSellerSliverGrid extends StatelessWidget {
-  const BestSellerSliverGrid({super.key});
+class CustomBestSellerSliverGrid extends StatelessWidget {
+  const CustomBestSellerSliverGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
+      itemCount: 6,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 163 / 214,
