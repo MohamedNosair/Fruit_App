@@ -4,7 +4,7 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruit_app/core/errors/faliure.dart';
-import 'package:fruit_app/core/exception/exception_custom.dart';
+import 'package:fruit_app/core/errors/exception_custom.dart';
 import 'package:fruit_app/core/firebase/database_service.dart';
 import 'package:fruit_app/core/firebase/firbase_service.dart';
 import 'package:fruit_app/core/utils/backend_end_points.dart';

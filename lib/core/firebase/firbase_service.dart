@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:fruit_app/core/exception/exception_custom.dart';
+import 'package:fruit_app/core/errors/exception_custom.dart';
 import 'package:fruit_app/generated/l10n.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
