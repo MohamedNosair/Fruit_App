@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fruit_app/core/errors/faliure.dart';
+import 'package:fruit_app/core/errors/failure.dart';
 import 'package:fruit_app/core/errors/exception_custom.dart';
 import 'package:fruit_app/core/firebase/database_service.dart';
 import 'package:fruit_app/core/firebase/firbase_service.dart';
@@ -24,7 +24,7 @@ class AuthRepoImpl extends AuthRepo {
   });
   //// Create user with email and password
   @override
-  Future<Either<Faliure, UserEntities>> createEmialAndPassword(
+  Future<Either<Failure, UserEntities>> createEmialAndPassword(
     String emailAddress,
     String password,
     String name,
@@ -50,18 +50,18 @@ class AuthRepoImpl extends AuthRepo {
         await firbaseAuthService.deleteUser();
       }
       log('AuthRepoImpl.createUserWithEmailAndPassword${e.toString()}');
-      return left(ServerFaluire(message: e.message));
+      return left(ServerFailure(message: e.message));
     } catch (e) {
       if (user != null) {
         await firbaseAuthService.deleteUser();
       }
-      return left(ServerFaluire(message: e.toString()));
+      return left(ServerFailure(message: e.toString()));
     }
   }
 
   //// Sign in with email and password
   @override
-  Future<Either<Faliure, UserEntities>> signinEmialAndPassword(
+  Future<Either<Failure, UserEntities>> signinEmialAndPassword(
     String emailAddress,
     String password,
   ) async {
@@ -70,18 +70,18 @@ class AuthRepoImpl extends AuthRepo {
       user = await firbaseAuthService.sigininWithEmailAndPassword(
         emailAddress: emailAddress,
         password: password,
-      );      
+      );
       var userData = await getUserData(documentId: user.uid);
       await saveUserData(user: userData);
       return right(userData);
     } on ExceptionCustom catch (e) {
-      return left(ServerFaluire(message: e.message));
+      return left(ServerFailure(message: e.message));
     }
   }
 
   //// Sign in with Google
   @override
-  Future<Either<Faliure, UserEntities>> signinWithGoogle() async {
+  Future<Either<Failure, UserEntities>> signinWithGoogle() async {
     User? user;
 
     try {
@@ -104,23 +104,23 @@ class AuthRepoImpl extends AuthRepo {
       if (user != null) {
         await firbaseAuthService.deleteUser();
       }
-      return left(ServerFaluire(message: e.message));
+      return left(ServerFailure(message: e.message));
     } catch (e) {
       log('AuthRepoImpl.signinWithGoogle: ${e.toString()}');
       if (user != null) {
         await firbaseAuthService.deleteUser();
       }
-      return left(ServerFaluire(message: e.toString()));
+      return left(ServerFailure(message: e.toString()));
     }
   }
 
   /// Sign in with Facebook
   @override
-  Future<Either<Faliure, UserEntities>> signinWithFacebook() async {
+  Future<Either<Failure, UserEntities>> signinWithFacebook() async {
     User? user;
     try {
       user = await firbaseAuthService.signInWithFacebook();
-      var userModel =  UserEntities(
+      var userModel = UserEntities(
         imageUrl: user.photoURL ?? '',
         name: user.displayName ?? '',
         emailAddress: user.email ?? '',
@@ -133,12 +133,12 @@ class AuthRepoImpl extends AuthRepo {
       if (user != null) {
         await firbaseAuthService.deleteUser();
       }
-      return left(ServerFaluire(message: e.toString()));
+      return left(ServerFailure(message: e.toString()));
     } catch (e) {
       if (user != null) {
         await firbaseAuthService.deleteUser();
       }
-      return left(ServerFaluire(message: e.toString()));
+      return left(ServerFailure(message: e.toString()));
     }
   }
 
@@ -156,14 +156,15 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<UserEntities> getUserData({required String documentId}) async {
     var userData = await databaseService.getData(
-      path: BackendEndPoints.getUserData,
       documentId: documentId,
+      path: BackendEndPoints.getUserData,
+
     );
     return UserModel.fromJson(userData);
   }
-  
+
   @override
-  Future saveUserData({required UserEntities user})async {
+  Future saveUserData({required UserEntities user}) async {
     var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
     await storage.write(kUserData, jsonData);
   }
