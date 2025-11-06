@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/themes/styles.dart';
 import 'package:fruit_app/core/utils/extension.dart';

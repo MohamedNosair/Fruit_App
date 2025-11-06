@@ -7,8 +7,8 @@ import 'package:fruit_app/features/auth/domain/entities/user_entities.dart';
 
 UserEntities getDataOfUser()  {
   String jsonString = storage.read(kUserData);
-  var userdata = UserModel.fromJson(jsonDecode(jsonString));
-  return userdata;
+  var userEntity = UserModel.fromJson(jsonDecode(jsonString));
+  return userEntity;
 }
 
 

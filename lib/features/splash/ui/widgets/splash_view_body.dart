@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_app/core/firebase/firbase_service.dart';
 import 'package:fruit_app/core/routing/routes.dart';
+import 'package:fruit_app/core/supabase/auth_services.dart';
 import 'package:fruit_app/core/utils/app_images.dart';
 import 'package:fruit_app/core/utils/constant.dart';
 import 'package:fruit_app/core/utils/get_storge.dart';
@@ -44,7 +44,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void excuteNavigation()  {
     bool isOnBoardingViewSeen =
          storage.read(kIsOnBoardingViewSeen) ?? false;
-    bool isUserLoggedIn = FirbaseAuthService().isSignedIn();
+    bool isUserLoggedIn = AuthSupabaseServices().isSignedIn();
     Future.delayed(Duration(seconds: 5), () {
       if (isOnBoardingViewSeen) {
         if (isUserLoggedIn) {

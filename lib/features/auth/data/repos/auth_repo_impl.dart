@@ -1,28 +1,32 @@
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruit_app/core/errors/failure.dart';
 import 'package:fruit_app/core/errors/exception_custom.dart';
-import 'package:fruit_app/core/firebase/database_service.dart';
+import 'package:fruit_app/core/supabase/database_service.dart';
 import 'package:fruit_app/core/firebase/firbase_service.dart';
+import 'package:fruit_app/core/supabase/auth_services.dart';
 import 'package:fruit_app/core/utils/backend_end_points.dart';
 import 'package:fruit_app/core/utils/constant.dart';
 import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/features/auth/data/model/user_model.dart';
 import 'package:fruit_app/features/auth/domain/entities/user_entities.dart';
 import 'package:fruit_app/features/auth/domain/repos/auth_repos.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthRepoImpl extends AuthRepo {
-  final FirbaseAuthService firbaseAuthService;
+  // final FirbaseAuthService firbaseAuthService;
   final DatabaseService databaseService;
+  final AuthSupabaseServices authSupabaseServices;
 
   AuthRepoImpl({
     required this.databaseService,
-    required this.firbaseAuthService,
+    // required this.firbaseAuthService,
+    required this.authSupabaseServices,
   });
-  //// Create user with email and password
+  // Create user with email and password
+
+  //! finish
   @override
   Future<Either<Failure, UserEntities>> createEmialAndPassword(
     String emailAddress,
@@ -31,35 +35,37 @@ class AuthRepoImpl extends AuthRepo {
   ) async {
     User? user;
     try {
-      user = await firbaseAuthService.createEmailAndPassword(
+      user = await authSupabaseServices.signUpWithEmailAndPassword(
         emailAddress: emailAddress,
         password: password,
+        name: name,
       );
-      var userModel = UserEntities(
+      log("user${user}");
+      var userEntity = UserEntities(
         imageUrl: '',
         name: name,
         emailAddress: emailAddress,
-        uId: user.uid,
+        uId: user.id,
       );
-      await addUserData(user: userModel);
-      var userData = await getUserData(documentId: user.uid);
-      await saveUserData(user: userData);
-      return right(userData);
+
+      await addUserData(user: userEntity);
+      await saveUserData(user: userEntity);
+      return right(userEntity);
     } on ExceptionCustom catch (e) {
       if (user != null) {
-        await firbaseAuthService.deleteUser();
+        await authSupabaseServices.deleteUser(user.id);
       }
-      log('AuthRepoImpl.createUserWithEmailAndPassword${e.toString()}');
       return left(ServerFailure(message: e.message));
     } catch (e) {
       if (user != null) {
-        await firbaseAuthService.deleteUser();
+        await authSupabaseServices.deleteUser(user.id);
       }
       return left(ServerFailure(message: e.toString()));
     }
   }
 
-  //// Sign in with email and password
+  //! finish
+  // Sign in with email and password supabase
   @override
   Future<Either<Failure, UserEntities>> signinEmialAndPassword(
     String emailAddress,
@@ -67,82 +73,90 @@ class AuthRepoImpl extends AuthRepo {
   ) async {
     User? user;
     try {
-      user = await firbaseAuthService.sigininWithEmailAndPassword(
+      user = await authSupabaseServices.signInWithEmailAndPassword(
         emailAddress: emailAddress,
         password: password,
       );
-      var userData = await getUserData(documentId: user.uid);
-      await saveUserData(user: userData);
-      return right(userData);
+      UserEntities userEntities = await getUserData(documentId: user.id);
+      await saveUserData(user: userEntities);
+      return right(userEntities);
     } on ExceptionCustom catch (e) {
       return left(ServerFailure(message: e.message));
     }
   }
 
-  //// Sign in with Google
+  // Sign in with Google supabase
+  //! finish
   @override
   Future<Either<Failure, UserEntities>> signinWithGoogle() async {
     User? user;
-
     try {
-      user = await firbaseAuthService.signInWithGoogle();
+      user = await authSupabaseServices.signWithGoogle();
 
       var userEntity = UserModel.fromFirbaseUser(user);
 
       var isUserExists = await databaseService.isUserExists(
         path: BackendEndPoints.isUserExists,
-        documentId: user.uid,
+        documentId: user.id,
       );
+
       if (isUserExists) {
-        await getUserData(documentId: user.uid);
-      } else {
         await addUserData(user: userEntity);
+      } else {
+        await getUserData(documentId: user.id);
       }
       await saveUserData(user: userEntity);
       return right(userEntity);
     } on ExceptionCustom catch (e) {
       if (user != null) {
-        await firbaseAuthService.deleteUser();
+        await authSupabaseServices.deleteUser(user.id);
       }
       return left(ServerFailure(message: e.message));
     } catch (e) {
       log('AuthRepoImpl.signinWithGoogle: ${e.toString()}');
       if (user != null) {
-        await firbaseAuthService.deleteUser();
+        await authSupabaseServices.deleteUser(user.id);
       }
       return left(ServerFailure(message: e.toString()));
     }
   }
 
-  /// Sign in with Facebook
+  /// Sign in with Facebook supabase
   @override
   Future<Either<Failure, UserEntities>> signinWithFacebook() async {
     User? user;
     try {
-      user = await firbaseAuthService.signInWithFacebook();
-      var userModel = UserEntities(
-        imageUrl: user.photoURL ?? '',
-        name: user.displayName ?? '',
-        emailAddress: user.email ?? '',
-        uId: user.uid,
+      user = await authSupabaseServices.signInWithFacebook();
+      var userEntity = UserModel.fromFirbaseUser(user);
+
+      var isUserExists = await databaseService.isUserExists(
+        path: BackendEndPoints.isUserExists,
+        documentId: user.id,
       );
-      await addUserData(user: userModel);
-      await saveUserData(user: userModel);
-      return right(userModel);
+
+      if (isUserExists) {
+        await addUserData(user: userEntity);
+      } else {
+        await getUserData(documentId: user.id);
+      }
+      await saveUserData(user: userEntity);
+
+      return right(userEntity);
     } on ExceptionCustom catch (e) {
       if (user != null) {
-        await firbaseAuthService.deleteUser();
+        await authSupabaseServices.deleteUser(user.id);
       }
       return left(ServerFailure(message: e.toString()));
     } catch (e) {
       if (user != null) {
-        await firbaseAuthService.deleteUser();
+        await authSupabaseServices.deleteUser(user.id);
       }
       return left(ServerFailure(message: e.toString()));
     }
   }
 
   /// add user data to database
+  //! finish
   @override
   Future<void> addUserData({required UserEntities user}) async {
     await databaseService.addData(
@@ -153,16 +167,17 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   /// get user data from database
+  //! finish
   @override
   Future<UserEntities> getUserData({required String documentId}) async {
     var userData = await databaseService.getData(
       documentId: documentId,
       path: BackendEndPoints.getUserData,
-
     );
     return UserModel.fromJson(userData);
   }
 
+  //! finish
   @override
   Future saveUserData({required UserEntities user}) async {
     var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());

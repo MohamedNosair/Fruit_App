@@ -16,7 +16,7 @@ class SignUpView extends StatelessWidget {
       appBar: AppBarCustom(text: S.current.signUp),
       body: BlocProvider(
         create: (context) => SignupCubit(
-          getIt<AuthRepo>(),
+          sl<AuthRepo>(),
         ),
         child: SignupViewBodyBlocConsumer(),
       ),

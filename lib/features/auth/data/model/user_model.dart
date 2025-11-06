@@ -1,6 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruit_app/core/utils/constant.dart';
 import 'package:fruit_app/features/auth/domain/entities/user_entities.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class UserModel extends UserEntities {
   UserModel({
@@ -12,14 +12,15 @@ class UserModel extends UserEntities {
 
   factory UserModel.fromFirbaseUser(User? user) {
     return UserModel(
-      name: user?.displayName ?? '',
+      name: user?.userMetadata?['name'] ?? '',
       emailAddress: user?.email ?? '',
-      uId: user?.uid ?? '',
-      imageUrl: user?.photoURL ?? '',
-    
+      uId: user?.id ?? '',
+      imageUrl:
+          user?.userMetadata?['avatar_url'] ??
+          user?.userMetadata?['picture'] ??
+          '',
     );
   }
-
 
   static UserModel fromJson(Map<String, dynamic> json) {
     return UserModel(
@@ -30,7 +31,7 @@ class UserModel extends UserEntities {
     );
   }
 
- factory UserModel.fromEntity(UserEntities user) {
+  factory UserModel.fromEntity(UserEntities user) {
     return UserModel(
       name: user.name,
       emailAddress: user.emailAddress,
@@ -39,7 +40,7 @@ class UserModel extends UserEntities {
     );
   }
 
- toMap() {
+  toMap() {
     return {
       kname: name,
       kemailAddress: emailAddress,
@@ -47,5 +48,4 @@ class UserModel extends UserEntities {
       kimageUrl: imageUrl,
     };
   }
-
 }

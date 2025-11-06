@@ -7,11 +7,11 @@ class storage {
   }
 
   static write(String key, value)  {
-     box.write(key, value);
+   return  box.write(key, value);
   }
 
   static remove(key)  {
-     box.remove(key);
+   return  box.remove(key);
   }
  
 }

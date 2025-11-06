@@ -1,14 +1,27 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_app/core/product_cubit/cubit/product_cubit.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/core/widgets/search_text_field.dart';
-import 'package:fruit_app/core/widgets/custom_best_seller_sliver_grid.dart';
+import 'package:fruit_app/features/home/ui/veiws/widgets/best_seller_sliver_grid_bloc_builder.dart';
 import 'package:fruit_app/features/home/ui/veiws/widgets/best_selling_header.dart';
 import 'package:fruit_app/features/home/ui/veiws/widgets/custom_home_app_bar.dart';
 import 'package:fruit_app/features/home/ui/veiws/widgets/featured_item_list.dart';
 
-class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+class HomeBody extends StatefulWidget {
+  const HomeBody({super.key});
+
+  @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
+  @override
+  void initState() {
+    context.read<ProductCubit>().getAllBestSellingProducts();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +49,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
 
-        SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 12.0.w),
-          sliver: const CustomBestSellerSliverGrid(),
-        ),
+        const BestSellerSliverGridBlocBuilder(),
       ],
     );
   }

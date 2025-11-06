@@ -15,7 +15,7 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       appBar: AppBarCustom(text: S.current.login),
       body: BlocProvider(
-        create: (context) => SigninCubit(getIt<AuthRepo>()),
+        create: (context) => SigninCubit(sl<AuthRepo>()),
         child: SigininViewBodyBlocConsumer(),
       ),
     );

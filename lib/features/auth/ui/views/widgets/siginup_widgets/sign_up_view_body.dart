@@ -12,6 +12,7 @@ import 'package:fruit_app/features/auth/ui/logic/signup_cubit/signup_cubit.dart'
 import 'package:fruit_app/features/auth/ui/views/widgets/signin_widgets/dont_and_have_account.dart';
 import 'package:fruit_app/features/auth/ui/views/widgets/siginup_widgets/terms_and_condations.dart';
 import 'package:fruit_app/generated/l10n.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});

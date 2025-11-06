@@ -1,8 +1,5 @@
-import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_app/core/utils/constant.dart';
-import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/features/auth/domain/entities/user_entities.dart';
 import 'package:fruit_app/features/auth/domain/repos/auth_repos.dart';
 import 'package:meta/meta.dart';
@@ -27,9 +24,8 @@ class SignupCubit extends Cubit<SignupState> {
       (faluire) {
         emit(SignupErrorState(message: faluire.message));
       },
-      (userEntitie) {
-        emit(SignupSuccessState(userEntities: userEntitie));
-  
+      (userEntities)async {
+        emit(SignupSuccessState(userEntities: userEntities));
         
       },
     );
