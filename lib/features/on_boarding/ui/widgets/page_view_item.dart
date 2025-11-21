@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/routing/routes.dart';
@@ -6,6 +7,7 @@ import 'package:fruit_app/core/utils/constant.dart';
 import 'package:fruit_app/core/utils/extension.dart';
 import 'package:fruit_app/core/utils/get_storge.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
+import 'package:fruit_app/firebase_engine.dart';
 import 'package:fruit_app/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -47,9 +49,13 @@ class PageViewItem extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(16.r),
                   child: TextButton(
-                    onPressed: () async{
-                     await storage.write(kIsOnBoardingViewSeen, true);
+                    onPressed: () async {
+                      await storage.write(kIsOnBoardingViewSeen, true);
                       context.pushReplacementNamed(Routes.loginView);
+                      FirebaseEngine.logEvent(
+                        name: 'onboarding_skip_clicked',
+                        parameters: {"onboarding": "skip_onboarding"},
+                      );
                     },
                     child: Text(
                       tr.skip,

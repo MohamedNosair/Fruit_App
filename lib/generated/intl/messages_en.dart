@@ -81,7 +81,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("password"),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
+    "products_in_your_shopping_cart": MessageLookupByLibrary.simpleMessage(
+      "products in your shopping cart",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "result": MessageLookupByLibrary.simpleMessage("Result"),
     "search": MessageLookupByLibrary.simpleMessage("Search..."),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("Search and shop"),
     "shopNow": MessageLookupByLibrary.simpleMessage("Shop now"),
@@ -114,5 +118,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "wrongPassword": MessageLookupByLibrary.simpleMessage(
       "Incorrect password.",
     ),
+    "you_have": MessageLookupByLibrary.simpleMessage("you have"),
   };
 }

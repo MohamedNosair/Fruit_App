@@ -30,6 +30,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: AppColors.green500,
   );
+  static TextStyle font13RegularGreen = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.green500,
+  );
   static TextStyle font13BoldOrange = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.bold,

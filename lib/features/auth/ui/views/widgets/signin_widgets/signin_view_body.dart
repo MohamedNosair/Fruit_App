@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,6 +13,7 @@ import 'package:fruit_app/features/auth/ui/logic/signin_cubit/signin_cubit.dart'
 import 'package:fruit_app/features/auth/ui/views/widgets/signin_widgets/dont_and_have_account.dart';
 import 'package:fruit_app/features/auth/ui/views/widgets/signin_widgets/forget_password.dart';
 import 'package:fruit_app/features/auth/ui/views/widgets/signin_widgets/signin_with_social_media.dart';
+import 'package:fruit_app/firebase_engine.dart';
 import 'package:fruit_app/generated/l10n.dart';
 
 class SigninViewBody extends StatefulWidget {
@@ -73,6 +75,10 @@ class _SigininViewBodyState extends State<SigninViewBody> {
                 text: S.current.login,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
+                    FirebaseEngine.logLogin(
+                      loginMethod: "email_password",
+                      parameters: {"method": "email_password and user emailAddress"},
+                    );
                     formKey.currentState!.save();
                     context.read<SigninCubit>().signinWithEmailAndPassword(
                       password,

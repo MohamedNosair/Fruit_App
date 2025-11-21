@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,8 +9,8 @@ import 'package:fruit_app/core/widgets/custom_text_form_field.dart';
 import 'package:fruit_app/features/auth/ui/logic/signup_cubit/signup_cubit.dart';
 import 'package:fruit_app/features/auth/ui/views/widgets/signin_widgets/dont_and_have_account.dart';
 import 'package:fruit_app/features/auth/ui/views/widgets/siginup_widgets/terms_and_condations.dart';
+import 'package:fruit_app/firebase_engine.dart';
 import 'package:fruit_app/generated/l10n.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});
@@ -84,6 +82,12 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 onPressed: () {
                   if (isTermsAccepted) {
                     if (formKey.currentState!.validate()) {
+                      FirebaseEngine.logSignUp(
+                        parameters: {
+                          "method": "email_password and user emailAddress",
+                        },
+                        signUpMethod: "email_password",
+                      );
                       formKey.currentState!.save();
                       context
                           .read<SignupCubit>()

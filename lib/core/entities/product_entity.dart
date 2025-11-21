@@ -1,7 +1,6 @@
-
 import 'package:fruit_app/core/entities/review_entity.dart';
 
-class ProductEntity{
+class ProductEntity {
   final String name;
   final String code;
   final String description;
@@ -9,25 +8,27 @@ class ProductEntity{
 
   final bool isFeatured;
   String? imageUrl;
-  final int expirationsMonths;
+  final num expirationsMonths;
   final bool isOrganic;
-  final int numberOfCalories;
-  final num avgRating = 0;
-  final num ratingCount = 0;
-  final int unitAmount;
-  final List<ReviewEntity> reviews;
-  ProductEntity(
-      {required this.name,
-      required this.code,
-      required this.description,
-      required this.price,
-      required this.reviews,
-      required this.expirationsMonths,
-      required this.numberOfCalories,
-      required this.unitAmount,
-      this.isOrganic = false,
-      required this.isFeatured,
-      this.imageUrl});
+  final num numberOfCalories;
+  // final num avgRating = 0;
+  // final num ratingCount = 0;
+  final num unitAmount;
+  // final List<ReviewEntity> reviews;
+  ProductEntity({
+    required this.name,
+    required this.code,
+    required this.description,
+    required this.price,
+    // required this.reviews,
+    required this.expirationsMonths,
+    required this.numberOfCalories,
+    required this.unitAmount,
+    this.isOrganic = false,
+    required this.isFeatured,
+    this.imageUrl,
+    // required num sellingCount,
+  });
 
   @override
   List<Object?> get props => [code];

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/entities/product_entity.dart';
 import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/themes/app_text.dart';
 import 'package:fruit_app/core/themes/styles.dart';
-import 'package:fruit_app/core/utils/app_images.dart';
+import 'package:fruit_app/core/utils/fade_in_network_image.dart';
 import 'package:fruit_app/generated/l10n.dart';
 
 class FruitItem extends StatelessWidget {
@@ -15,7 +16,9 @@ class FruitItem extends StatelessWidget {
     return Container(
       decoration: ShapeDecoration(
         color: const Color(0xFFF3F5F7),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
       ),
       child: Stack(
         children: [
@@ -30,10 +33,12 @@ class FruitItem extends StatelessWidget {
           Positioned.fill(
             child: Column(
               children: [
-                const SizedBox(height: 20),
-                Image.network(product.imageUrl??'' ,fit: BoxFit.cover),
-                // Image.asset(AppImages.avocado, fit: BoxFit.cover),
-                const SizedBox(height: 24),
+                Expanded(flex: 2, child: SizedBox()),
+                Expanded(
+                  flex: 5,
+                  child: FadeInNetworkImage(imageUrl: product.imageUrl!),
+                ),
+                SizedBox(height: 24.h),
                 ListTile(
                   title: AppText(
                     text: product.name,

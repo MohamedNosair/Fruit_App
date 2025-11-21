@@ -41,7 +41,7 @@ class ActiveNavigationBar extends StatelessWidget {
               ),
               child: Center(child: SvgPicture.asset(image)),
             ),
-            widthSpace(4),
+            widthSpace(5.w),
             AppText(text: text, style: TextStyles.font11semiBoldGreen500),
           ],
         ),

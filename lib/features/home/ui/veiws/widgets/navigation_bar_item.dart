@@ -14,10 +14,11 @@ class NavigationBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  isSelected
-            ? ActiveNavigationBar(image: item.activeImage, text: item.name)
-            : InActiveNavigationBarItem(image: item.inActiveImage
-      );
-    
+    return isSelected
+        ? ActiveNavigationBar(image: item.activeImage, text: item.name)
+        : Container(
+            color: Colors.transparent,
+            child: InActiveNavigationBarItem(image: item.inActiveImage),
+          );
   }
 }

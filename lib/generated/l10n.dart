@@ -424,6 +424,26 @@ class S {
     return Intl.message('Cart', name: 'cart', desc: '', args: []);
   }
 
+  /// `Result`
+  String get result {
+    return Intl.message('Result', name: 'result', desc: '', args: []);
+  }
+
+  /// `you have`
+  String get you_have {
+    return Intl.message('you have', name: 'you_have', desc: '', args: []);
+  }
+
+  /// `products in your shopping cart`
+  String get products_in_your_shopping_cart {
+    return Intl.message(
+      'products in your shopping cart',
+      name: 'products_in_your_shopping_cart',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.`
   String get subTitlePageViewOne {
     return Intl.message(

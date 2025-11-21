@@ -6,16 +6,17 @@ ProductEntity createDummyProductData() {
     code: 'APL123',
     description: 'Fresh and juicy apples',
     price: 1.99,
-    reviews: [],
+    // reviews: [],
     expirationsMonths: 2,
     numberOfCalories: 52,
     unitAmount: 1,
     isOrganic: true,
     isFeatured: true,
     imageUrl: 'https://example.com/images/apple.png',
+    // sellingCount: 9,
   );
- 
 }
+
 List<ProductEntity> getDummyData() {
   return [
     createDummyProductData(),

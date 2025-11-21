@@ -4,7 +4,8 @@ import 'package:fruit_app/features/home/domain/entity/bottom_navigation_bar_enti
 import 'package:fruit_app/features/home/ui/veiws/widgets/navigation_bar_item.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  CustomBottomNavigationBar({super.key});
+  final ValueChanged<int> onItemTapped;
+  CustomBottomNavigationBar({super.key, required this.onItemTapped});
 
   @override
   State<CustomBottomNavigationBar> createState() =>
@@ -21,18 +22,19 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       height: 70.h,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: bottomNavBarItems.asMap().entries.map((item) {
-          int index = item.key;
+        children: bottomNavBarItems.asMap().entries.map((e) {
+          int index = e.key;
           return Expanded(
-            flex: selectedIndex == index ? 3 : 2,
+            flex: index == selectedIndex ? 3 : 2,
             child: GestureDetector(
               onTap: () {
                 selectedIndex = index;
+                 widget.onItemTapped(index);
                 setState(() {});
               },
               child: NavigationBarItem(
-                isSelected: index == selectedIndex,
-                item: item.value,
+                isSelected: selectedIndex == index,
+                item: e.value,
               ),
             ),
           );

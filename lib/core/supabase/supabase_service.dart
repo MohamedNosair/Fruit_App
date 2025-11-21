@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fruit_app/core/supabase/database_service.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -30,20 +32,25 @@ class SupabaseService implements DatabaseService {
           .single();
       return data;
     } else {
-      Query<Map<String, dynamic>> data = firestore.collection(path);
-      if (query != null) {
-        if (query['orderBy'] != null) {
-          var orderBy = query['orderBy'];
-          var descending = query['descending'];
+      // Query<Map<String, dynamic>> data = firestore.collection(path);
+      final data = await supabase
+          .from("products")
+          .select();
+      // if (query != null) {
+      //   if (query['orderBy'] != null) {
+      //     var orderBy = query['orderBy'];
+      //     var descending = query['descending'];
 
-          data = data.orderBy(orderBy, descending: descending);
-        } else if (query['limit'] != null) {
-          var limit = query['limit'];
-          data = data.limit(limit);
-        }
-      }
-      var result = await data.get();
-      return result.docs.map((e) => e.data()).toList();
+      //     data = data.orderBy(orderBy, descending: descending);
+      //   } else if (query['limit'] != null) {
+      //     var limit = query['limit'];
+      //     data = data.limit(limit);
+      //   }
+      // }
+      // var result = await data.get();
+      // return result.docs.map((e) => e.data()).toList();
+      
+      return data;
     }
   }
 

@@ -13,15 +13,19 @@ class BestSellerSliverGridBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
-        if (state is ProductSuccessState) {
-          return BestSellerSliverGrid(products: state.products);
+        if (state is ProductLoadingState) {
+          return Skeletonizer.sliver(
+            child: BestSellerSliverGrid(products: getDummyData()),
+          );
         } else if (state is ProductFailureState) {
           return SliverToBoxAdapter(
             child: CustomErrorWidget(text: state.errorMessage),
           );
+        } else if (state is ProductSuccessState) {
+          return BestSellerSliverGrid(products: state.products);
         } else {
-          return Skeletonizer.sliver(
-            child: BestSellerSliverGrid(products: getDummyData()),
+          return SliverToBoxAdapter(
+            child: CustomErrorWidget(text: 'Unexpected error occurred'),
           );
         }
       },

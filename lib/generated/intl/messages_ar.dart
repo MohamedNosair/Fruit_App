@@ -41,7 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "byCreatingAnAccountYouAgreeTo": MessageLookupByLibrary.simpleMessage(
       "من خلال إنشاء حساب،فإنك توافق على",
     ),
-    "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
+    "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
@@ -80,7 +80,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "or": MessageLookupByLibrary.simpleMessage("أو"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+    "products_in_your_shopping_cart": MessageLookupByLibrary.simpleMessage(
+      "منتجات في سلة التسوق الخاصة بك",
+    ),
     "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "result": MessageLookupByLibrary.simpleMessage("نتائج"),
     "search": MessageLookupByLibrary.simpleMessage("ابحث عن..."),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
     "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
@@ -113,5 +117,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "wrongPassword": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور غير صحيحة.",
     ),
+    "you_have": MessageLookupByLibrary.simpleMessage("لديك"),
   };
 }
