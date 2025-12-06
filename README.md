@@ -9,3 +9,4 @@ A new Flutter project.
 <img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/5b56c327-9c1b-44e3-86bc-c6fa173acc19" />
 <img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/f95e3225-acd6-4068-b968-623b8726d293" />
 <img width="270" height="600" alt="Image" src="https://github.com/user-attachments/assets/c48b4ea9-3062-4d39-a3df-c767ba32f72b" />
+<img width="270" height="600" alt="Image" src="assets/readme/cart_screen.png" />
