@@ -34,8 +34,8 @@ class ProductRepoImpl implements ProductRepo {
                 path: BackendEndPoints.getAllProducts,
                 query: {
                   'limit': 10,
-                  'orderBy': 'sellingCount',
-                  "descending": true,
+                  'orderBy': 'selling_count',
+                  "descending": false,
                 },
               )
               as List<Map<String, dynamic>>;

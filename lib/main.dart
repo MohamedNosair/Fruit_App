@@ -11,12 +11,14 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 /// gradlew signingReport => to get SHA1 (get from terminal C:\Users\DELL\projects\fruit_app\android)
 void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
-   GetStorage.init();
+  await GetStorage.init();
   Bloc.observer = MyBlocObserver();
   await FirebaseEngine.init();
   setupGetIt();
-  
+
   runApp(const FruitHub());
 }
 

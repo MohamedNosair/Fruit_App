@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/product_cubit/cubit/product_cubit.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/core/widgets/search_text_field.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/best_seller_sliver_grid_bloc_builder.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/best_selling_header.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/custom_home_app_bar.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/featured_item_list.dart';
+import 'package:fruit_app/features/home/presentation/widgets/best_seller_sliver_grid_bloc_builder.dart';
+import 'package:fruit_app/features/home/presentation/widgets/best_selling_header.dart';
+import 'package:fruit_app/features/home/presentation/widgets/custom_home_app_bar.dart';
+import 'package:fruit_app/features/home/presentation/widgets/featured_item_list.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({super.key});
@@ -22,7 +22,6 @@ class _HomeBodyState extends State<HomeBody> {
     context.read<ProductCubit>().getAllBestSellingProducts();
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

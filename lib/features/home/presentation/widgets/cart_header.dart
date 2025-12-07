@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/themes/styles.dart';
+import 'package:fruit_app/features/home/presentation/logic/cart_cubit/cart_cubit.dart';
 import 'package:fruit_app/generated/l10n.dart';
 
 class CartHeader extends StatelessWidget {
@@ -14,7 +16,9 @@ class CartHeader extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 10.h),
       child: Center(
         child: Text(
-          S.current.you_have + " 3 " + S.current.products_in_your_shopping_cart,
+          S.current.you_have +
+              ' ${context.watch<CartCubit>().cartEntity.cartItems.length} ' +
+              S.current.products_in_your_shopping_cart,
           style: TextStyles.font13RegularGreen,
         ),
       ),

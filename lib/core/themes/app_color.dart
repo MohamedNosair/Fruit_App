@@ -9,8 +9,10 @@ class AppColors {
   static const Color gray500 = Color(0xFF4E5556);
   static const Color gray400 = Color(0xFF949D9E);
   static const Color gray950 = Color(0xFF0C0D0D);
+  static const Color gray50 = Color(0xFFF2F3F3);
   static const Color black40 = Color(0xFFC9CECF);
   static const Color black20 = Color(0xFFDDDFDF);
+  static const Color colorBackgroundItemCart = Color(0xFFF3F5F7);
   static const Color orange = Color(0xFFF4A91F);
   static const Color lightOrange = Color(0xFFF8C76D);
   // static const Color green50 = Color(0xFFEBF9F1);

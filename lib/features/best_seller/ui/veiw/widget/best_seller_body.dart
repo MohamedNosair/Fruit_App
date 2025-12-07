@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/best_seller_sliver_grid.dart';
+import 'package:fruit_app/features/home/presentation/widgets/best_seller_sliver_grid.dart';
 
 class BestSellerBody extends StatelessWidget {
   const BestSellerBody({super.key});

@@ -444,6 +444,41 @@ class S {
     );
   }
 
+  /// `add success`
+  String get add_success {
+    return Intl.message('add success', name: 'add_success', desc: '', args: []);
+  }
+
+  /// `delete success`
+  String get delete_success {
+    return Intl.message(
+      'delete success',
+      name: 'delete_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `shipping`
+  String get shipping {
+    return Intl.message('shipping', name: 'shipping', desc: '', args: []);
+  }
+
+  /// `payment`
+  String get payment {
+    return Intl.message('payment', name: 'payment', desc: '', args: []);
+  }
+
+  /// `address`
+  String get address {
+    return Intl.message('address', name: 'address', desc: '', args: []);
+  }
+
+  /// `review`
+  String get review {
+    return Intl.message('review', name: 'review', desc: '', args: []);
+  }
+
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.`
   String get subTitlePageViewOne {
     return Intl.message(

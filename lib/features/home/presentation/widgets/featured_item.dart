@@ -6,7 +6,7 @@ import 'package:fruit_app/core/themes/app_text.dart';
 import 'package:fruit_app/core/themes/styles.dart';
 import 'package:fruit_app/core/utils/app_images.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/featured_item_button.dart';
+import 'package:fruit_app/features/home/presentation/widgets/featured_item_button.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
 import 'package:intl/intl.dart';
 

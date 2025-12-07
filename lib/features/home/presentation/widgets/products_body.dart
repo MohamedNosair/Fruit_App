@@ -6,7 +6,7 @@ import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/core/widgets/custom_app_bar.dart';
 import 'package:fruit_app/core/widgets/custom_header.dart';
 import 'package:fruit_app/core/widgets/search_text_field.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/best_seller_sliver_grid_bloc_builder.dart';
+import 'package:fruit_app/features/home/presentation/widgets/best_seller_sliver_grid_bloc_builder.dart';
 
 import 'package:fruit_app/generated/l10n.dart';
 
@@ -18,6 +18,7 @@ class ProductsBody extends StatefulWidget {
 }
 
 class _ProductsBodyState extends State<ProductsBody> {
+
   @override
   void initState() {
     context.read<ProductCubit>().getAllProducts();

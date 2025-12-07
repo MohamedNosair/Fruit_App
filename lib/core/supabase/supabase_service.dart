@@ -33,23 +33,24 @@ class SupabaseService implements DatabaseService {
       return data;
     } else {
       // Query<Map<String, dynamic>> data = firestore.collection(path);
-      final data = await supabase
+      PostgrestTransformBuilder<PostgrestList> data = supabase
           .from("products")
           .select();
-      // if (query != null) {
-      //   if (query['orderBy'] != null) {
-      //     var orderBy = query['orderBy'];
-      //     var descending = query['descending'];
-
-      //     data = data.orderBy(orderBy, descending: descending);
-      //   } else if (query['limit'] != null) {
-      //     var limit = query['limit'];
-      //     data = data.limit(limit);
-      //   }
-      // }
+          
+      if (query != null) {
+        if (query['orderBy'] != null) {
+          var orderBy = query['orderBy'];
+          var descending = query['descending'];
+          data = data.order(orderBy, ascending: descending);
+          return data;
+        } else if (query['limit'] != null) {
+          var limit = query['limit'];
+          data = data.limit(limit);
+        }
+      }
       // var result = await data.get();
       // return result.docs.map((e) => e.data()).toList();
-      
+
       return data;
     }
   }

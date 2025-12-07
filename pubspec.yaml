@@ -53,6 +53,7 @@ dependencies:
   supabase_flutter: ^2.10.3
   skeletonizer: ^2.1.0+1
   firebase_analytics: ^11.6.0
+  equatable: ^2.0.7
   
   
 

@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "SignupFailed": MessageLookupByLibrary.simpleMessage(
       "فشل التسجيل. يرجى المحاولة مرة أخرى.",
     ),
+    "add_success": MessageLookupByLibrary.simpleMessage("تمت الاضافة بنجاح"),
+    "address": MessageLookupByLibrary.simpleMessage("العنوان"),
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "تمتلك حساب بالفعل؟",
     ),
@@ -44,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "delete_success": MessageLookupByLibrary.simpleMessage("تمت الحذف بنجاح"),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لا تمتلك حساب ؟",
     ),
@@ -79,14 +82,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or": MessageLookupByLibrary.simpleMessage("أو"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
     "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "products_in_your_shopping_cart": MessageLookupByLibrary.simpleMessage(
       "منتجات في سلة التسوق الخاصة بك",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "result": MessageLookupByLibrary.simpleMessage("نتائج"),
+    "review": MessageLookupByLibrary.simpleMessage("المراجعة"),
     "search": MessageLookupByLibrary.simpleMessage("ابحث عن..."),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
+    "shipping": MessageLookupByLibrary.simpleMessage("الشحن"),
     "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
     "signUp": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),

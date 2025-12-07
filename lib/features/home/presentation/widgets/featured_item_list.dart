@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/featured_item.dart';
+import 'package:fruit_app/features/home/presentation/widgets/featured_item.dart';
 
 class FeaturedItemList extends StatelessWidget {
   const FeaturedItemList({super.key});

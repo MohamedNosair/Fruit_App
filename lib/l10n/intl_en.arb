@@ -53,11 +53,15 @@
   "result": "Result",
   "you_have": "you have",
   "products_in_your_shopping_cart": "products in your shopping cart",
+  "add_success": "add success",
+  "delete_success": "delete success",
+  "shipping": "shipping",
+  "payment": "payment",
+  "address": "address",
+  "review": "review",
 
 
-
-
-    "subTitlePageViewOne": "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.",
-    "subTitlePageViewTwo": "We offer you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you're choosing the perfect fruit."
+  "subTitlePageViewOne": "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.",
+  "subTitlePageViewTwo": "We offer you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you're choosing the perfect fruit."
 
 }

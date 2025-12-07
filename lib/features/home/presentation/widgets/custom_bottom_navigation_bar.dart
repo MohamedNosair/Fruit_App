@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/features/home/domain/entity/bottom_navigation_bar_entity.dart';
-import 'package:fruit_app/features/home/ui/veiws/widgets/navigation_bar_item.dart';
+import 'package:fruit_app/features/home/presentation/widgets/navigation_bar_item.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   final ValueChanged<int> onItemTapped;

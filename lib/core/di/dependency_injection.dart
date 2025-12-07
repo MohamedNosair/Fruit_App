@@ -1,5 +1,4 @@
 import 'package:fruit_app/core/supabase/database_service.dart';
-import 'package:fruit_app/core/firebase/firbase_service.dart';
 import 'package:fruit_app/core/supabase/supabase_service.dart';
 import 'package:fruit_app/core/repo/product_repo.dart';
 import 'package:fruit_app/core/repo/product_repo_impl.dart';

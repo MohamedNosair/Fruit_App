@@ -13,7 +13,7 @@ ProductEntity createDummyProductData() {
     isOrganic: true,
     isFeatured: true,
     imageUrl: 'https://example.com/images/apple.png',
-    // sellingCount: 9,
+    sellingCount: 9,
   );
 }
 

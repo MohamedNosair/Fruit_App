@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "SignupFailed": MessageLookupByLibrary.simpleMessage(
       "Sign up failed. Please try again.",
     ),
+    "add_success": MessageLookupByLibrary.simpleMessage("add success"),
+    "address": MessageLookupByLibrary.simpleMessage("address"),
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account",
     ),
@@ -47,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account."),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("Create account"),
+    "delete_success": MessageLookupByLibrary.simpleMessage("delete success"),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
@@ -80,14 +83,17 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("password"),
+    "payment": MessageLookupByLibrary.simpleMessage("payment"),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "products_in_your_shopping_cart": MessageLookupByLibrary.simpleMessage(
       "products in your shopping cart",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "result": MessageLookupByLibrary.simpleMessage("Result"),
+    "review": MessageLookupByLibrary.simpleMessage("review"),
     "search": MessageLookupByLibrary.simpleMessage("Search..."),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("Search and shop"),
+    "shipping": MessageLookupByLibrary.simpleMessage("shipping"),
     "shopNow": MessageLookupByLibrary.simpleMessage("Shop now"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),

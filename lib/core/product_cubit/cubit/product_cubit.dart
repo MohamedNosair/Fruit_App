@@ -1,4 +1,3 @@
-
 import 'package:bloc/bloc.dart';
 import 'package:fruit_app/core/entities/product_entity.dart';
 import 'package:fruit_app/core/repo/product_repo.dart';
@@ -6,9 +5,12 @@ import 'package:meta/meta.dart';
 
 part 'product_state.dart';
 
-class ProductCubit extends Cubit<ProductState> {
+class ProductCubit extends Cubit<ProductStates> {
   ProductCubit(this.productRepo) : super(ProductInitial());
   final ProductRepo productRepo;
+
+
+ 
 
   int productLength = 0;
   Future<void> getAllProducts() async {
@@ -17,8 +19,7 @@ class ProductCubit extends Cubit<ProductState> {
     result.fold((failure) => emit(ProductFailureState(failure.message)), (
       products,
     ) {
-      productLength = products.length;
-
+    
       emit(ProductSuccessState(products));
     });
   }
@@ -26,7 +27,8 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> getAllBestSellingProducts() async {
     emit(ProductLoadingState());
     final result = await productRepo.getBestSellingProducts();
-    result.fold((failure) => emit(ProductFailureState(failure.message)), (
+    result.fold((failure) => emit(
+      ProductFailureState(failure.message)), (
       products,
     ) {
       emit(ProductSuccessState(products));

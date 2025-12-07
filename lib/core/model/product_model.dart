@@ -7,7 +7,7 @@ class ProductModel {
   final String description;
   final num price;
   final bool isFeatured;
-  // final num sellingCount;
+  final num sellingCount;
   String? imageUrl;
   final num expirationsMonths;
   final bool isOrganic;
@@ -24,7 +24,7 @@ class ProductModel {
     required this.numberOfCalories,
     // required this.avgRating,
     required this.unitAmount,
-    // required this.sellingCount,
+    required this.sellingCount,
     // required this.reviews,
     required this.price,
     required this.isOrganic,
@@ -41,7 +41,7 @@ class ProductModel {
       expirationsMonths: json['expirations_months'],
       numberOfCalories: json['number_of_calories'],
       unitAmount: json['unit_amount'],
-      // sellingCount: json['selling_count'],
+      sellingCount: json['selling_count'],
       // reviews: json['reviews'] != null
       //     ? List<ReviewModel>.from(
       //         json['reviews'].map((e) => ReviewModel.fromJson(e)),
@@ -56,7 +56,7 @@ class ProductModel {
 
   ProductEntity toEntity() {
     return ProductEntity(
-      // sellingCount: sellingCount,
+      sellingCount: sellingCount,
       name: name,
       code: code,
       description: description,

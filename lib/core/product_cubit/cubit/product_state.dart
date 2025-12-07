@@ -1,15 +1,27 @@
 part of 'product_cubit.dart';
 
 @immutable
-sealed class ProductState {}
+sealed class ProductStates {}
 
-final class ProductInitial extends ProductState {}
-final class ProductLoadingState extends ProductState {}
-final class ProductSuccessState extends ProductState {
+final class ProductInitial extends ProductStates {}
+
+final class ProductLoadingState extends ProductStates {}
+final class ProductSuccessState extends ProductStates {
+
   final List<ProductEntity> products;
-  ProductSuccessState(this.products);
+  ProductSuccessState(this.products, );
 }
-final class ProductFailureState extends ProductState {
+
+final class ProductFailureState extends ProductStates {
   final String errorMessage;
   ProductFailureState(this.errorMessage);
 }
+
+
+
+final class IndexChangedState extends ProductStates {
+  final int index;
+  IndexChangedState(this.index);
+}
+
+
