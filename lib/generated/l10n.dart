@@ -479,6 +479,136 @@ class S {
     return Intl.message('review', name: 'review', desc: '', args: []);
   }
 
+  /// `continue`
+  String get next {
+    return Intl.message('continue', name: 'next', desc: '', args: []);
+  }
+
+  /// `Cash`
+  String get cash {
+    return Intl.message('Cash', name: 'cash', desc: '', args: []);
+  }
+
+  /// `Delivery from the location`
+  String get delivery_from_the_location {
+    return Intl.message(
+      'Delivery from the location',
+      name: 'delivery_from_the_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy now, pay later`
+  String get buy_now_pay_later {
+    return Intl.message(
+      'Buy now, pay later',
+      name: 'buy_now_pay_later',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please specify your payment method.`
+  String get please_specify_your_payment_method {
+    return Intl.message(
+      'Please specify your payment method.',
+      name: 'please_specify_your_payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `free`
+  String get free {
+    return Intl.message('free', name: 'free', desc: '', args: []);
+  }
+
+  /// `city`
+  String get city {
+    return Intl.message('city', name: 'city', desc: '', args: []);
+  }
+
+  /// `Floor number, apartment number...`
+  String get apartment_number {
+    return Intl.message(
+      'Floor number, apartment number...',
+      name: 'apartment_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number`
+  String get phone_number {
+    return Intl.message(
+      'Phone number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request summary :`
+  String get summary {
+    return Intl.message(
+      'Request summary :',
+      name: 'summary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subtotal :`
+  String get subtotal {
+    return Intl.message('Subtotal :', name: 'subtotal', desc: '', args: []);
+  }
+
+  /// `Delivery :`
+  String get delivery {
+    return Intl.message('Delivery :', name: 'delivery', desc: '', args: []);
+  }
+
+  /// `total :`
+  String get total {
+    return Intl.message('total :', name: 'total', desc: '', args: []);
+  }
+
+  /// `confirm`
+  String get confirm {
+    return Intl.message('confirm', name: 'confirm', desc: '', args: []);
+  }
+
+  /// `online`
+  String get online {
+    return Intl.message('online', name: 'online', desc: '', args: []);
+  }
+
+  /// `There are no products in the basket.`
+  String get there_are_no_products_in_the_basket {
+    return Intl.message(
+      'There are no products in the basket.',
+      name: 'there_are_no_products_in_the_basket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Address`
+  String get delivery_address {
+    return Intl.message(
+      'Delivery Address',
+      name: 'delivery_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
   /// `Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and highest quality.`
   String get subTitlePageViewOne {
     return Intl.message(

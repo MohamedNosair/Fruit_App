@@ -3,20 +3,19 @@ import 'package:fruit_app/features/checkout/presentation/widgets/active_step_ite
 import 'package:fruit_app/features/checkout/presentation/widgets/inactive_step_item.dart';
 
 class StepItem extends StatelessWidget {
-  const StepItem({super.key, required this.text, required this.isActive});
+  const StepItem({super.key, required this.text, required this.isActive , required this.index});
   final String text;
+  final int index;
   final bool isActive;
   @override
   Widget build(BuildContext context) {
     return AnimatedCrossFade(
-      firstChild: InactiveStepItem(text: text),
+      firstChild: InactiveStepItem(text: text, index: index),
       secondChild: ActiveStepItem(stepName: text),
       crossFadeState: isActive
           ? CrossFadeState.showSecond
           : CrossFadeState.showFirst,
-      duration: Duration(
-        microseconds: 300
-      ),
+      duration: Duration(microseconds: 300),
     );
   }
 }

@@ -42,23 +42,41 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account",
     ),
+    "apartment_number": MessageLookupByLibrary.simpleMessage(
+      "Floor number, apartment number...",
+    ),
     "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
+    "buy_now_pay_later": MessageLookupByLibrary.simpleMessage(
+      "Buy now, pay later",
+    ),
     "byCreatingAnAccountYouAgreeTo": MessageLookupByLibrary.simpleMessage(
       "By creating an account, you agree to",
     ),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "cash": MessageLookupByLibrary.simpleMessage("Cash"),
+    "city": MessageLookupByLibrary.simpleMessage("city"),
+    "confirm": MessageLookupByLibrary.simpleMessage("confirm"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create account."),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("Create account"),
     "delete_success": MessageLookupByLibrary.simpleMessage("delete success"),
+    "delivery": MessageLookupByLibrary.simpleMessage("Delivery :"),
+    "delivery_address": MessageLookupByLibrary.simpleMessage(
+      "Delivery Address",
+    ),
+    "delivery_from_the_location": MessageLookupByLibrary.simpleMessage(
+      "Delivery from the location",
+    ),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "eg": MessageLookupByLibrary.simpleMessage("EG"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",
     ),
     "forgetPassword": MessageLookupByLibrary.simpleMessage("forget password ?"),
+    "free": MessageLookupByLibrary.simpleMessage("free"),
     "fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
     "goodEvening": MessageLookupByLibrary.simpleMessage("Good Evening"),
     "goodMorning": MessageLookupByLibrary.simpleMessage("Good Morning"),
@@ -81,9 +99,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "networkRequestFailed": MessageLookupByLibrary.simpleMessage(
       "Network error. Please check your internet connection.",
     ),
+    "next": MessageLookupByLibrary.simpleMessage("continue"),
+    "online": MessageLookupByLibrary.simpleMessage("online"),
     "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("password"),
     "payment": MessageLookupByLibrary.simpleMessage("payment"),
+    "phone_number": MessageLookupByLibrary.simpleMessage("Phone number"),
+    "please_specify_your_payment_method": MessageLookupByLibrary.simpleMessage(
+      "Please specify your payment method.",
+    ),
     "products": MessageLookupByLibrary.simpleMessage("Products"),
     "products_in_your_shopping_cart": MessageLookupByLibrary.simpleMessage(
       "products in your shopping cart",
@@ -104,9 +128,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "subTitlePageViewTwo": MessageLookupByLibrary.simpleMessage(
       "We offer you the finest, carefully selected fruits. Check out the details, photos, and reviews to make sure you\'re choosing the perfect fruit.",
     ),
+    "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal :"),
+    "summary": MessageLookupByLibrary.simpleMessage("Request summary :"),
+    "there_are_no_products_in_the_basket": MessageLookupByLibrary.simpleMessage(
+      "There are no products in the basket.",
+    ),
     "tooManyRequests": MessageLookupByLibrary.simpleMessage(
       "Too many attempts. Please try again later.",
     ),
+    "total": MessageLookupByLibrary.simpleMessage("total :"),
     "unexpected": MessageLookupByLibrary.simpleMessage(
       "Facebook login operation in progress",
     ),

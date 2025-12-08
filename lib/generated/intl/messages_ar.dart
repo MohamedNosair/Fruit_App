@@ -39,17 +39,32 @@ class MessageLookup extends MessageLookupByLibrary {
     "alreadyHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "تمتلك حساب بالفعل؟",
     ),
+    "apartment_number": MessageLookupByLibrary.simpleMessage(
+      "رقم الطابق , رقم الشقه ..",
+    ),
     "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
+    "buy_now_pay_later": MessageLookupByLibrary.simpleMessage(
+      "يرجي تحديد طريقه الدفع",
+    ),
     "byCreatingAnAccountYouAgreeTo": MessageLookupByLibrary.simpleMessage(
       "من خلال إنشاء حساب،فإنك توافق على",
     ),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+    "cash": MessageLookupByLibrary.simpleMessage("الدفع عند الاستلام"),
+    "city": MessageLookupByLibrary.simpleMessage("المدينة"),
+    "confirm": MessageLookupByLibrary.simpleMessage("الدفع عبر paypal"),
     "createAccount": MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "delete_success": MessageLookupByLibrary.simpleMessage("تمت الحذف بنجاح"),
+    "delivery": MessageLookupByLibrary.simpleMessage("التوصيل :"),
+    "delivery_address": MessageLookupByLibrary.simpleMessage("عنوان التوصيل"),
+    "delivery_from_the_location": MessageLookupByLibrary.simpleMessage(
+      "التسليم من المكان",
+    ),
     "dontHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لا تمتلك حساب ؟",
     ),
+    "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
     "eg": MessageLookupByLibrary.simpleMessage("جنيه"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
     "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
@@ -58,9 +73,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgetPassword": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور ؟",
     ),
+    "free": MessageLookupByLibrary.simpleMessage("مجاني"),
     "fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
-    "goodEvening": MessageLookupByLibrary.simpleMessage("مساء الخير"),
-    "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير"),
+    "goodEvening": MessageLookupByLibrary.simpleMessage("مساء الخير..!"),
+    "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير..!"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "hub": MessageLookupByLibrary.simpleMessage("HUB"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
@@ -80,9 +96,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "networkRequestFailed": MessageLookupByLibrary.simpleMessage(
       "فشل الاتصال بالشبكة. يرجى التحقق من اتصال الإنترنت.",
     ),
+    "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "online": MessageLookupByLibrary.simpleMessage("الدفع اونلاين"),
     "or": MessageLookupByLibrary.simpleMessage("أو"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "please_specify_your_payment_method": MessageLookupByLibrary.simpleMessage(
+      "اشتري الان وادفع لاحقا",
+    ),
     "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
     "products_in_your_shopping_cart": MessageLookupByLibrary.simpleMessage(
       "منتجات في سلة التسوق الخاصة بك",
@@ -103,9 +125,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "subTitlePageViewTwo": MessageLookupByLibrary.simpleMessage(
       "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
     ),
+    "subtotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي :"),
+    "summary": MessageLookupByLibrary.simpleMessage("ملخص الطلب :"),
+    "there_are_no_products_in_the_basket": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد منتجات في السلة",
+    ),
     "tooManyRequests": MessageLookupByLibrary.simpleMessage(
       "عدد كبير جدًا من المحاولات. يرجى المحاولة لاحقًا.",
     ),
+    "total": MessageLookupByLibrary.simpleMessage("الاجمالي :"),
     "unexpected": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ غير متوقع. حاول مرة أخرى لاحقًا.",
     ),

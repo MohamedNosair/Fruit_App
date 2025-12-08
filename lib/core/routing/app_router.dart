@@ -4,6 +4,7 @@ import 'package:fruit_app/features/auth/ui/views/signin_view.dart';
 import 'package:fruit_app/features/auth/ui/views/sign_up_view.dart';
 import 'package:fruit_app/features/best_seller/ui/veiw/best_seller_view.dart';
 import 'package:fruit_app/features/checkout/presentation/views/checkout_view.dart';
+import 'package:fruit_app/features/home/domain/entity/cart_Entity.dart';
 import 'package:fruit_app/features/home/presentation/veiws/main_view.dart';
 import 'package:fruit_app/features/on_boarding/ui/on_boarding_view.dart';
 import 'package:fruit_app/features/splash/ui/splash_view.dart';
@@ -26,7 +27,10 @@ class AppRouter {
       case Routes.bestSellerView:
         return MaterialPageRoute(builder: (_) => const BestSellerView());
       case Routes.checkoutView:
-        return MaterialPageRoute(builder: (_) => const CheckoutView());
+        return MaterialPageRoute(
+          builder: (_) =>
+              CheckoutView(cartItem: settings.arguments as CartEntity),
+        );
 
       default:
         return null;

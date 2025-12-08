@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/themes/styles.dart';
-import 'package:fruit_app/generated/l10n.dart';
 
 class ActiveStepItem extends StatelessWidget {
     final String stepName;

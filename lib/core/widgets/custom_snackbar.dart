@@ -18,7 +18,7 @@ void customSnackBar(
       ),
       backgroundColor: backgroundColor,
       behavior: SnackBarBehavior.floating,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 1),
     ),
   );
 }

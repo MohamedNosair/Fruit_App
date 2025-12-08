@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_app/core/routing/routes.dart';
+import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/utils/extension.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/core/widgets/custom_app_bar.dart';
 import 'package:fruit_app/core/widgets/custom_buttom.dart';
+import 'package:fruit_app/core/widgets/custom_snackbar.dart';
 import 'package:fruit_app/features/home/presentation/logic/cart_cubit/cart_cubit.dart';
 import 'package:fruit_app/features/home/presentation/widgets/cart_header.dart';
 import 'package:fruit_app/features/home/presentation/widgets/cart_item_list.dart';
@@ -49,7 +51,19 @@ class CartBady extends StatelessWidget {
             text:
                 'total ${context.watch<CartCubit>().cartEntity.calculateTotalPrice()} EG',
             onPressed: () {
-              context.pushNamed(Routes.checkoutView);
+              if (context.read<CartCubit>().cartEntity.cartItems.isNotEmpty) {
+                context.pushNamed(
+                  Routes.checkoutView,
+                  arguments: context.read<CartCubit>().cartEntity,
+                );
+              } else {
+                customSnackBar(
+                  context: context,
+                  message: S.current.there_are_no_products_in_the_basket,
+                  icon: Icons.shopping_cart_rounded,
+                  backgroundColor: AppColors.lightMainColor,
+                );
+              }
             },
           ),
         ),
