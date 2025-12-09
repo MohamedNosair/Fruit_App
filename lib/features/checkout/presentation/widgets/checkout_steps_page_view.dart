@@ -10,7 +10,8 @@ class CheckOutStepsPageView extends StatelessWidget {
     super.key,
     required this.pageController,
     required this.formKey,
-    required this.valueListenable, required this.currentPage,
+    required this.valueListenable,
+    required this.currentPage,
   });
 
   final PageController pageController;
@@ -25,9 +26,19 @@ class CheckOutStepsPageView extends StatelessWidget {
       child: PageView.builder(
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: getPages(formKey, valueListenable, pageController,currentPage).length,
+        itemCount: getPages(
+          formKey,
+          valueListenable,
+          pageController,
+          currentPage,
+        ).length,
         itemBuilder: (context, index) {
-          return getPages(formKey, valueListenable, pageController, currentPage)[index];
+          return getPages(
+            formKey,
+            valueListenable,
+            pageController,
+            currentPage,
+          )[index];
         },
       ),
     );
@@ -38,11 +49,11 @@ List<Widget> getPages(
   GlobalKey<FormState> formKey,
   ValueListenable<AutovalidateMode> valueListenable,
   PageController pageController,
-  int currentPage ,
+  int currentPage,
 ) {
   return [
     ShippingSection(),
     AddressInputSection(formKey: formKey, valueListenable: valueListenable),
-    PaymentSection(pageController: pageController ,currentPage: currentPage,),
+    PaymentSection(pageController: pageController, currentPage: currentPage),
   ];
 }

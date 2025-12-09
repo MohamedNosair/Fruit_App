@@ -41,9 +41,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-  void excuteNavigation()  {
-    bool isOnBoardingViewSeen =
-         storage.read(kIsOnBoardingViewSeen) ?? false;
+  void excuteNavigation() {
+    bool isOnBoardingViewSeen = storage.read(kIsOnBoardingViewSeen) ?? false;
     bool isUserLoggedIn = AuthSupabaseServices().isSignedIn();
     Future.delayed(Duration(seconds: 5), () {
       if (isOnBoardingViewSeen) {
@@ -52,7 +51,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         } else {
           Navigator.pushReplacementNamed(context, Routes.onBoardingView);
         }
-      }else {
+      } else {
         Navigator.pushReplacementNamed(context, Routes.onBoardingView);
       }
     });

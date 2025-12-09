@@ -2,11 +2,15 @@ import 'package:fruit_app/core/utils/app_images.dart';
 import 'package:fruit_app/generated/l10n.dart';
 
 class BottomNavigationBarEntity {
-  final String activeImage , inActiveImage , name;
+  final String activeImage, inActiveImage, name;
 
-  BottomNavigationBarEntity({required this.activeImage, required this.inActiveImage, required this.name});
-
+  BottomNavigationBarEntity({
+    required this.activeImage,
+    required this.inActiveImage,
+    required this.name,
+  });
 }
+
 List<BottomNavigationBarEntity> bottomNavBarItems = [
   BottomNavigationBarEntity(
     activeImage: AppImages.homeBold,

@@ -16,7 +16,7 @@ class CartCubit extends Cubit<CartState> {
     // Get the CartItemEntity for the product
     CartItemEntity cartItemEntity = cartEntity.getCartItem(productEntity)!;
     if (isProductExist) {
-      cartItemEntity.increasCount();
+      cartItemEntity.increasQuantity();
     } else {
       cartEntity.addCartItem(cartItemEntity);
     }
@@ -28,9 +28,8 @@ class CartCubit extends Cubit<CartState> {
     cartEntity.removeCartItem(cartItemEntity);
     emit(CartItemRemoved());
   }
-  
+
   void updateCartItem(cartItemEntity) {
-    
     emit(CartItemUpdate());
   }
 }

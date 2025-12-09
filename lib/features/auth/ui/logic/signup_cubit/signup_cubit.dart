@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_app/features/auth/domain/entities/user_entities.dart';
 import 'package:fruit_app/features/auth/domain/repos/auth_repos.dart';
@@ -24,9 +23,8 @@ class SignupCubit extends Cubit<SignupState> {
       (faluire) {
         emit(SignupErrorState(message: faluire.message));
       },
-      (userEntities)async {
+      (userEntities) async {
         emit(SignupSuccessState(userEntities: userEntities));
-        
       },
     );
   }
@@ -36,5 +34,4 @@ class SignupCubit extends Cubit<SignupState> {
     obscureText = !obscureText;
     emit(togglePasswordVisibilityState());
   }
-
 }

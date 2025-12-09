@@ -6,14 +6,17 @@ import 'package:fruit_app/core/widgets/fruit_item.dart';
 class BestSellerSliverGrid extends StatelessWidget {
   final List<ProductEntity> products;
   final int currentIndex;
-  
-  const BestSellerSliverGrid({super.key, required this.products, this.currentIndex = 0});
+
+  const BestSellerSliverGrid({
+    super.key,
+    required this.products,
+    this.currentIndex = 0,
+  });
 
   @override
   Widget build(BuildContext context) {
-  
     return SliverPadding(
-      padding:  EdgeInsets.all(8.0.r),
+      padding: EdgeInsets.all(8.0.r),
       sliver: SliverGrid.builder(
         itemCount: products.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

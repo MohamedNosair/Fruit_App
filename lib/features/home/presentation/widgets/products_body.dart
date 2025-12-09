@@ -18,7 +18,6 @@ class ProductsBody extends StatefulWidget {
 }
 
 class _ProductsBodyState extends State<ProductsBody> {
-
   @override
   void initState() {
     context.read<ProductCubit>().getAllProducts();

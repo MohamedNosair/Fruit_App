@@ -11,7 +11,7 @@ class BestSellerBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 12.0.w),
 
       child: CustomScrollView(
-        slivers: [const BestSellerSliverGrid(products:[])],
+        slivers: [const BestSellerSliverGrid(products: [])],
       ),
     );
   }

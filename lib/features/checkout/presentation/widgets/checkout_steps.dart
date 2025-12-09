@@ -38,7 +38,6 @@ class CheckoutSteps extends StatelessWidget {
                   valueNotifier,
                 );
               }
-              
             },
 
             child: StepItem(

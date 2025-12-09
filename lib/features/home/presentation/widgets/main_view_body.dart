@@ -4,10 +4,7 @@ import 'package:fruit_app/features/home/presentation/veiws/cart_view.dart';
 import 'package:fruit_app/features/home/presentation/widgets/home_view.dart';
 
 class MainViewBody extends StatelessWidget {
-  const MainViewBody({
-    super.key,
-    required this.currentIndex,
-  });
+  const MainViewBody({super.key, required this.currentIndex});
 
   final int currentIndex;
 

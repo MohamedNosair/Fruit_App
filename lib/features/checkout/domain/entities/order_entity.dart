@@ -8,13 +8,33 @@ import 'package:fruit_app/generated/l10n.dart';
 
 class OrderEntity {
   final CartEntity cartItem;
+  final String uID;
   ShippingAddressEntity? shippingAddressEntity = ShippingAddressEntity();
   bool? payWithCash;
 
-  OrderEntity(this.cartItem, {this.payWithCash});
+  OrderEntity(this.cartItem, {required this.uID, this.payWithCash});
 
+  calculateShippingCost() {
+    if (payWithCash!) {
+      return 30;
+    } else {
+      return 0;
+    }
+  }
 
-  void handleShippingValidation(BuildContext context ,pageController) {
+  calculateShippingDiscount() {
+    return 0;
+  }
+
+  calculateTotalPriceAfterDiscountAndShipping() {
+    return cartItem.calculateTotalPrice() +
+        calculateShippingCost() -
+        calculateShippingDiscount();
+  }
+
+ 
+
+  void handleShippingValidation(BuildContext context, pageController) {
     if (context.read<OrderEntity>().payWithCash != null) {
       pageController.nextPage(
         duration: Duration(milliseconds: 300),
@@ -29,20 +49,21 @@ class OrderEntity {
       );
     }
   }
-void handleAddressValidation(
-  BuildContext context,
-  GlobalKey<FormState> formKey,
-  pageController,
-  valueNotifier,
-) {
-  if (formKey.currentState!.validate()) {
-    formKey.currentState!.save();
-    pageController.nextPage(
-      duration: Duration(milliseconds: 300),
-      curve: Curves.easeIn,
-    );
-  } else {
-    valueNotifier.value = AutovalidateMode.always;
+
+  void handleAddressValidation(
+    BuildContext context,
+    GlobalKey<FormState> formKey,
+    pageController,
+    valueNotifier,
+  ) {
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+      pageController.nextPage(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeIn,
+      );
+    } else {
+      valueNotifier.value = AutovalidateMode.always;
+    }
   }
-}
 }

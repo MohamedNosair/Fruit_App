@@ -3,7 +3,7 @@ import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/themes/styles.dart';
 import 'package:fruit_app/features/checkout/domain/entities/order_entity.dart';
 import 'package:fruit_app/features/checkout/presentation/widgets/order_summary_widget.dart';
-import 'package:fruit_app/features/checkout/presentation/widgets/paymaent_item.dart';
+import 'package:fruit_app/features/checkout/presentation/widgets/payment_item.dart';
 import 'package:fruit_app/generated/l10n.dart';
 import 'package:provider/provider.dart';
 

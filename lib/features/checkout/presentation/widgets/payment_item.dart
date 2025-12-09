@@ -5,8 +5,8 @@ import 'package:fruit_app/core/utils/app_decoration.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
 
 class PaymentItem extends StatelessWidget {
-   PaymentItem({super.key,  this.title, required this.child});
-  final String ? title;
+  PaymentItem({super.key, this.title, required this.child});
+  final String? title;
   final Widget child;
 
   @override

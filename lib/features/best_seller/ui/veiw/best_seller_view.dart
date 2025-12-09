@@ -8,8 +8,12 @@ class BestSellerView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBarCustom(text:S.current.bestSeller, showBackButton: true , showNotificationIcon: true),
+    return Scaffold(
+      appBar: AppBarCustom(
+        text: S.current.bestSeller,
+        showBackButton: true,
+        showNotificationIcon: true,
+      ),
       body: const BestSellerBody(),
     );
   }

@@ -22,6 +22,7 @@ class _HomeBodyState extends State<HomeBody> {
     context.read<ProductCubit>().getAllBestSellingProducts();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(

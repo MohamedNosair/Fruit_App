@@ -10,5 +10,5 @@ ThemeData appTheme() {
       brightness: Brightness.light,
     ).copyWith(surface: Colors.white, primary: Colors.white),
     appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
-  ); 
+  );
 }

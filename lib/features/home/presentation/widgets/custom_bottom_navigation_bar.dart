@@ -29,7 +29,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             child: GestureDetector(
               onTap: () {
                 selectedIndex = index;
-                 widget.onItemTapped(index);
+                widget.onItemTapped(index);
                 setState(() {});
               },
               child: NavigationBarItem(

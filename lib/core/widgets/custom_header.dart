@@ -23,7 +23,7 @@ class CustomHeader extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.r),
             ),
-            padding:  EdgeInsets.all(8.r), // مسافة داخلية متناسقة
+            padding: EdgeInsets.all(8.r), // مسافة داخلية متناسقة
             backgroundColor: Colors.white, // خلفية بيضاء ناعمة
           ),
           icon: const Icon(

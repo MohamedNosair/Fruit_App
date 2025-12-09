@@ -6,7 +6,7 @@ class AppImages {
   static String profileImage = '${assetsImages}profile_image.png';
   static String avocado = '${assetsImages}Avocado.png';
   //// svg
-  
+
   static String Circles = '${assets}Circles.svg';
   static String fruit = '${assets}fruit.svg';
   static String plant = '${assets}Plant.svg';
@@ -24,7 +24,7 @@ class AppImages {
   static String notification = '${assets}notification.svg';
   static String backgroundOffers = '${assets}background_offers.svg';
   static String strawberry = '${assets}strawberry.svg';
-   static String trash = '${assets}trash.svg';
+  static String trash = '${assets}trash.svg';
 
   /// svg home Bold
   static String homeBold = '${assets}bold/home.svg';
@@ -37,5 +37,4 @@ class AppImages {
   static String productsOutline = '${assets}outline/products.svg';
   static String cartOutline = '${assets}outline/cart.svg';
   static String profileOutline = '${assets}outline/profile.svg';
- 
 }

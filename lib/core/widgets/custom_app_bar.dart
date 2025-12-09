@@ -25,11 +25,14 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
       title: Text(text, style: TextStyles.font19BoldGray950),
       actions: [
         Visibility(
-          visible: showNotificationIcon ,
+          visible: showNotificationIcon,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0.w),
             child: CircleAvatar(
-              child: SvgPicture.asset(AppImages.notification, fit: BoxFit.cover),
+              child: SvgPicture.asset(
+                AppImages.notification,
+                fit: BoxFit.cover,
+              ),
               backgroundColor: AppColors.green50,
               radius: 20.r,
             ),

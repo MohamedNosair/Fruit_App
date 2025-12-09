@@ -1,6 +1,5 @@
 import 'package:fruit_app/core/entities/product_entity.dart';
 
-
 class ProductModel {
   final String name;
   final String code;

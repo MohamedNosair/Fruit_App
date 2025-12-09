@@ -5,8 +5,6 @@
 //     static final GoogleSignIn googleSignin = GoogleSignIn.instance;
 //   static bool inistialized = false;
 
-
-
 //     static Future<void> initSignInWithGoogle() async {
 //     if (!inistialized) {
 //       await googleSignin.initialize(
@@ -16,8 +14,6 @@
 //     }
 //     inistialized = true;
 //   }
-
-
 
 //     Future<User> signInWithGoogle() async {
 //     initSignInWithGoogle();

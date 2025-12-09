@@ -3,7 +3,7 @@ import 'package:fruit_app/core/entities/product_entity.dart';
 import 'package:fruit_app/core/errors/failure.dart';
 import 'package:fruit_app/core/supabase/database_service.dart';
 import 'package:fruit_app/core/model/product_model.dart';
-import 'package:fruit_app/core/repo/product_repo.dart';
+import 'package:fruit_app/core/repo/product/product_repo.dart';
 import 'package:fruit_app/core/utils/backend_end_points.dart';
 
 class ProductRepoImpl implements ProductRepo {

@@ -19,7 +19,7 @@ class SearchTextField extends StatelessWidget {
             blurRadius: 9,
             offset: Offset(0, 2),
             spreadRadius: 0,
-          )
+          ),
         ],
       ),
       child: TextField(
@@ -27,17 +27,11 @@ class SearchTextField extends StatelessWidget {
         decoration: InputDecoration(
           prefixIcon: SizedBox(
             width: 20.w,
-            child: Center(
-              child: SvgPicture.asset(AppImages.search),
-            ),
+            child: Center(child: SvgPicture.asset(AppImages.search)),
           ),
           suffixIcon: SizedBox(
             width: 20.w,
-            child: Center(
-              child: SvgPicture.asset(
-                AppImages.filter,
-              ),
-            ),
+            child: Center(child: SvgPicture.asset(AppImages.filter)),
           ),
           hintStyle: TextStyles.font16RegularGray400,
           hintText: S.of(context).search,
@@ -54,10 +48,7 @@ class SearchTextField extends StatelessWidget {
   OutlineInputBorder buildBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(4),
-      borderSide:  BorderSide(
-        width: 1.w,
-        color: Colors.white,
-      ),
+      borderSide: BorderSide(width: 1.w, color: Colors.white),
     );
   }
 }

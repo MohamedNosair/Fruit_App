@@ -12,13 +12,11 @@ abstract class AuthRepo {
   Future<Either<Failure, UserEntities>> signinEmialAndPassword(
     String emailAddress,
     String password,
-  
   );
   Future<Either<Failure, UserEntities>> signinWithGoogle();
   Future<Either<Failure, UserEntities>> signinWithFacebook();
 
   Future<void> addUserData({required UserEntities user});
   Future<void> saveUserData({required UserEntities user});
-  Future <UserEntities> getUserData({ required String documentId});
- 
+  Future<UserEntities> getUserData({required String documentId});
 }

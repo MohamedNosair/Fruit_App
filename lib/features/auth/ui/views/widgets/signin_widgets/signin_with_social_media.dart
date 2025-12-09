@@ -24,12 +24,12 @@ class SigninWithSocialMedia extends StatelessWidget {
           text: S.current.loginWithGoogle,
         ),
         if (Platform.isIOS)
-        SocialLoginButton(
-          onPressed: () {},
-          image: AppImages.apple,
-          text: S.current.loginWithApple,
-        ),
-        
+          SocialLoginButton(
+            onPressed: () {},
+            image: AppImages.apple,
+            text: S.current.loginWithApple,
+          ),
+
         SocialLoginButton(
           onPressed: () {
             context.read<SigninCubit>().signinWithFacebook();

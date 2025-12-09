@@ -7,24 +7,19 @@ part 'signin_state.dart';
 
 class SigninCubit extends Cubit<SigninState> {
   SigninCubit(this.authRepo) : super(SigninInitial());
-    final AuthRepo authRepo;
+  final AuthRepo authRepo;
 
-    bool obscureText = false;
+  bool obscureText = false;
   togglePasswordVisibility() {
     obscureText = !obscureText;
     emit(togglePasswordVisibilityState());
   }
 
-
-  Future<void> signinWithEmailAndPassword(
-    password,
-    emailAddress,
-  ) async {
+  Future<void> signinWithEmailAndPassword(password, emailAddress) async {
     emit(SigninLoadingState());
     final result = await authRepo.signinEmialAndPassword(
       emailAddress,
       password,
-     
     );
     result.fold(
       (faluire) {
@@ -32,11 +27,10 @@ class SigninCubit extends Cubit<SigninState> {
       },
       (userEntitie) {
         emit(SigninSuccessState(userEntities: userEntitie));
-        
       },
     );
   }
-  
+
   Future<void> signinWithGoogle() async {
     emit(SigninLoadingState());
     final result = await authRepo.signinWithGoogle();
@@ -50,7 +44,6 @@ class SigninCubit extends Cubit<SigninState> {
     );
   }
 
-  
   Future<void> signinWithFacebook() async {
     emit(SigninLoadingState());
     final result = await authRepo.signinWithFacebook();
@@ -63,6 +56,4 @@ class SigninCubit extends Cubit<SigninState> {
       },
     );
   }
-
-
 }

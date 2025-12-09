@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_app/core/routing/routes.dart';
@@ -20,7 +19,6 @@ class SigininViewBodyBlocConsumer extends StatelessWidget {
         if (state is SigninLoadingState) {
           LoadingDialog.show(context);
         } else if (state is SigninSuccessState) {
-          
           context.pop();
           context.pushNamedAndRemoveUntil(
             Routes.homeView,

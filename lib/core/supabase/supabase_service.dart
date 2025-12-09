@@ -1,11 +1,8 @@
-import 'dart:developer';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fruit_app/core/supabase/database_service.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseService implements DatabaseService {
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  // FirebaseFirestore firestore = FirebaseFirestore.instance;
   SupabaseClient supabase = Supabase.instance.client;
 
   @override
@@ -36,7 +33,7 @@ class SupabaseService implements DatabaseService {
       PostgrestTransformBuilder<PostgrestList> data = supabase
           .from("products")
           .select();
-          
+
       if (query != null) {
         if (query['orderBy'] != null) {
           var orderBy = query['orderBy'];

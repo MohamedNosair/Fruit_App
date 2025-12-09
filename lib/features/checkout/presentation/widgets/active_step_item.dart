@@ -4,8 +4,8 @@ import 'package:fruit_app/core/themes/app_color.dart';
 import 'package:fruit_app/core/themes/styles.dart';
 
 class ActiveStepItem extends StatelessWidget {
-    final String stepName;
-  const ActiveStepItem({super.key ,required this.stepName});
+  final String stepName;
+  const ActiveStepItem({super.key, required this.stepName});
 
   @override
   Widget build(BuildContext context) {

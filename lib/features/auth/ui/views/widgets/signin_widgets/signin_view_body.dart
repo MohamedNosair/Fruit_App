@@ -77,7 +77,9 @@ class _SigininViewBodyState extends State<SigninViewBody> {
                   if (formKey.currentState!.validate()) {
                     FirebaseEngine.logLogin(
                       loginMethod: "email_password",
-                      parameters: {"method": "email_password and user emailAddress"},
+                      parameters: {
+                        "method": "email_password and user emailAddress",
+                      },
                     );
                     formKey.currentState!.save();
                     context.read<SigninCubit>().signinWithEmailAndPassword(

@@ -10,7 +10,6 @@ abstract class DatabaseService {
     String? documentId,
     Map<String, dynamic>? query,
   });
- 
 
   Future<bool> isUserExists({required String path, required String documentId});
 }

@@ -1,10 +1,9 @@
-class ExceptionCustom implements Exception{
+class ExceptionCustom implements Exception {
   final String message;
 
   ExceptionCustom({required this.message});
-   
 
-@override
+  @override
   String toString() {
     return message;
   }

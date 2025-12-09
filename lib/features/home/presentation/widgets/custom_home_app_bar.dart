@@ -17,7 +17,7 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: CircleAvatar(
         backgroundImage: getDataOfUser().imageUrl.isNullOrEmpty()
             ? AssetImage(AppImages.profileImage)
-            : NetworkImage(getDataOfUser().imageUrl??''),
+            : NetworkImage(getDataOfUser().imageUrl ?? ''),
         backgroundColor: Colors.transparent,
         radius: 20.r,
       ),

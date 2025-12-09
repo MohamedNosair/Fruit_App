@@ -11,7 +11,6 @@ class CustomCheckBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      
       duration: Duration(microseconds: 300),
       curve: Curves.easeInOut,
       width: 24.w,
@@ -25,9 +24,8 @@ class CustomCheckBox extends StatelessWidget {
             color: isChecked ? Colors.transparent : Color(0xffDDDFDF),
           ),
         ),
-      
       ),
-      
+
       child: Padding(
         padding: const EdgeInsets.all(3.0),
         child: isChecked ? SvgPicture.asset(AppImages.right) : SizedBox(),

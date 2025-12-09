@@ -10,10 +10,10 @@ class CartEntity {
   }
 
   void removeCartItem(CartItemEntity item) {
-     cartItems.remove(item);
+    cartItems.remove(item);
   }
 
-  double calculateTotalPrice() {
+   calculateTotalPrice() {
     double total = 0;
     for (var item in cartItems) {
       total += item.totalPrice();
@@ -30,7 +30,7 @@ class CartEntity {
     }
     return false;
   }
-
+   
   // Get CartItemEntity for a given product
   CartItemEntity? getCartItem(ProductEntity product) {
     for (var item in cartItems) {
@@ -38,6 +38,6 @@ class CartEntity {
         return item;
       }
     }
-    return CartItemEntity(productEntity: product, count: 1);
+    return CartItemEntity(productEntity: product, quantity: 1);
   }
 }

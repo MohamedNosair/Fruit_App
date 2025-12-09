@@ -1,7 +1,6 @@
-
 import 'package:equatable/equatable.dart';
 
-class ProductEntity  extends Equatable{
+class ProductEntity extends Equatable {
   final String name;
   final String code;
   final String description;
@@ -30,9 +29,8 @@ class ProductEntity  extends Equatable{
     this.imageUrl,
     required this.sellingCount,
   });
-  
+
   @override
   // TODO: implement props
   List<Object?> get props => [code];
-
 }

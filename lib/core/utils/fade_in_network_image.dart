@@ -34,7 +34,7 @@ class _FadeInNetworkImageState extends State<FadeInNetworkImage> {
           return const Center(child: CircularProgressIndicator());
         },
         errorBuilder: (context, error, stackTrace) =>
-             Icon(Icons.broken_image, size: 50.sh, color: Colors.grey),
+            Icon(Icons.broken_image, size: 50.sh, color: Colors.grey),
       ),
     );
   }

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_app/core/utils/app_paypal_keys.dart';
 import 'package:fruit_app/core/utils/spacing_helper.dart';
 import 'package:fruit_app/core/widgets/custom_buttom.dart';
+import 'package:fruit_app/core/widgets/custom_snackbar.dart';
 import 'package:fruit_app/features/checkout/domain/entities/order_entity.dart';
+import 'package:fruit_app/features/checkout/domain/entities/paypal_payment_entity/paypal_payment_entity.dart';
+import 'package:fruit_app/features/checkout/presentation/logic/add_order_cubit/add_order_cubit.dart';
 import 'package:fruit_app/features/checkout/presentation/widgets/checkout_steps.dart';
 import 'package:fruit_app/features/checkout/presentation/widgets/checkout_steps_page_view.dart';
 import 'package:fruit_app/generated/l10n.dart';
@@ -77,6 +82,8 @@ class _CheckoutBodyViewState extends State<CheckoutBodyView> {
                   pageController,
                   valueNotifier,
                 );
+              } else {
+                processPayment(context, orderEntity);
               }
             },
           ),
@@ -97,5 +104,35 @@ class _CheckoutBodyViewState extends State<CheckoutBodyView> {
       default:
         return S.current.next;
     }
+  }
+
+  void processPayment(BuildContext context, orderEntity) {
+    var order = context.read<OrderEntity>();
+    var addOrderCubit = context.read<AddOrderCubit>();
+    PaypalPaymentEntity paymentEntity = PaypalPaymentEntity.fromEntity(order);
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (BuildContext context) => PaypalCheckoutView(
+          sandboxMode: true,
+          clientId: kPaypalClientId,
+          secretKey: kPaypalSecretKey,
+          transactions: [paymentEntity.tojson()],
+          note: "Contact us for any questions on your order.",
+          onSuccess: (Map params) async {
+            addOrderCubit.addOrder(orderEntity);
+            customSnackBarSuccess(context: context, text: "Success");
+            Navigator.pop(context);
+          },
+          onError: (error) {
+            print("onError: $error");
+            Navigator.pop(context);
+          },
+          onCancel: () {
+            print('cancelled:');
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
   }
 }

@@ -1,7 +1,9 @@
+import 'package:fruit_app/core/repo/order/order_repo.dart';
+import 'package:fruit_app/core/repo/order/order_repo_impl.dart';
 import 'package:fruit_app/core/supabase/database_service.dart';
 import 'package:fruit_app/core/supabase/supabase_service.dart';
-import 'package:fruit_app/core/repo/product_repo.dart';
-import 'package:fruit_app/core/repo/product_repo_impl.dart';
+import 'package:fruit_app/core/repo/product/product_repo.dart';
+import 'package:fruit_app/core/repo/product/product_repo_impl.dart';
 import 'package:fruit_app/core/supabase/auth_services.dart';
 import 'package:fruit_app/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:fruit_app/features/auth/domain/repos/auth_repos.dart';
@@ -13,7 +15,6 @@ void setupGetIt() {
   // sl.registerSingleton<FirbaseAuthService>(FirbaseAuthService());
   sl.registerSingleton<AuthSupabaseServices>(AuthSupabaseServices());
   sl.registerSingleton<DatabaseService>(SupabaseService());
- 
 
   sl.registerSingleton<AuthRepo>(
     AuthRepoImpl(
@@ -25,5 +26,8 @@ void setupGetIt() {
 
   sl.registerSingleton<ProductRepo>(
     ProductRepoImpl(databaseService: sl<DatabaseService>()),
+  );
+  sl.registerSingleton<OrderRepo>(
+    OrderRepoImpl(databaseService: sl<DatabaseService>()),
   );
 }

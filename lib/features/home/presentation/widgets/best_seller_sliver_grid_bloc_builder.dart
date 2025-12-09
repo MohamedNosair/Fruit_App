@@ -22,8 +22,7 @@ class BestSellerSliverGridBlocBuilder extends StatelessWidget {
             child: CustomErrorWidget(text: state.errorMessage),
           );
         } else if (state is ProductSuccessState) {
-
-          return BestSellerSliverGrid(products: state.products );
+          return BestSellerSliverGrid(products: state.products);
         } else {
           return SliverToBoxAdapter(
             child: CustomErrorWidget(text: 'Unexpected error occurred'),

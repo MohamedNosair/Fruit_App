@@ -1,6 +1,4 @@
-
 import 'package:fruit_app/core/model/review_model.dart';
-
 
 num getAvgRating(List<ReviewModel> reviews) {
   var sum = 0.0;

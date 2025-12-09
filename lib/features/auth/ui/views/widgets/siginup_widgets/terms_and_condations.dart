@@ -10,7 +10,7 @@ import 'package:fruit_app/generated/l10n.dart';
 
 class TermsAndCondations extends StatelessWidget {
   final void Function()? onTap;
-  final bool  isChecked;
+  final bool isChecked;
 
   const TermsAndCondations({super.key, this.onTap, required this.isChecked});
 

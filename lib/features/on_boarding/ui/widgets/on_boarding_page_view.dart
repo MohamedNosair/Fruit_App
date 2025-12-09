@@ -6,11 +6,7 @@ import 'package:fruit_app/features/on_boarding/ui/widgets/page_view_item.dart';
 import 'package:fruit_app/generated/l10n.dart';
 
 class OnBoardingPageView extends StatelessWidget {
-  const OnBoardingPageView({
-    super.key,
-    required this.pageController,
-    
-  });
+  const OnBoardingPageView({super.key, required this.pageController});
   final PageController pageController;
 
   @override

@@ -6,13 +6,14 @@ import 'package:fruit_app/core/utils/constant.dart';
 import 'package:fruit_app/generated/l10n.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
 /// @gmail.com
 class AuthSupabaseServices {
   final Supabase supabase = Supabase.instance;
 
   Future<void> deleteUser(userId) async {
     userId = Supabase.instance.client.auth.currentUser?.id;
-   String path = BackendEndPoints.getUserData;
+    String path = BackendEndPoints.getUserData;
 
     await Supabase.instance.client.from(path).delete().eq('id', userId);
   }

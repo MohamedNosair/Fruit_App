@@ -6,6 +6,7 @@ sealed class SigninState {}
 final class SigninInitial extends SigninState {}
 
 final class togglePasswordVisibilityState extends SigninState {}
+
 final class SigninLoadingState extends SigninState {}
 
 final class SigninSuccessState extends SigninState {

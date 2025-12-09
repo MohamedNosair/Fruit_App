@@ -4,7 +4,6 @@ import 'package:dartz/dartz.dart';
 import 'package:fruit_app/core/errors/failure.dart';
 import 'package:fruit_app/core/errors/exception_custom.dart';
 import 'package:fruit_app/core/supabase/database_service.dart';
-import 'package:fruit_app/core/firebase/firbase_service.dart';
 import 'package:fruit_app/core/supabase/auth_services.dart';
 import 'package:fruit_app/core/utils/backend_end_points.dart';
 import 'package:fruit_app/core/utils/constant.dart';
